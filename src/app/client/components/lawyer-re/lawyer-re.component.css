@@ -1,0 +1,53 @@
+.recommendation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.recommendation-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.lawyer-info {
+  text-align: center;
+}
+
+.lawyer-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+.stars span {
+  font-size: 20px;
+  color: #ddd;
+}
+
+.stars .filled {
+  color: gold;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
