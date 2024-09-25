@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LawConnect - Abogados</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>LawConnect</h1>
+            <nav>
+                <ul>
+                    <li>Inicio</li>
+                    <li>Notificaciones</li>
+                    <li>Casos</li>
+                    <li>Para Abogados</li>
+                </ul>
+            </nav>
+        </header>
+        <div v-if="!registered" class="registration-form">
+            <h2>LawConnect (Abogados)</h2>
+            <form @submit.prevent="register">
+                <input type="text" v-model="newLawyer.function" placeholder="Función" required>
+                <input type="text" v-model="newLawyer.id" placeholder="DNI/Pasaporte" required>
+                <input type="text" v-model="newLawyer.Ciudad" placeholder="Ciudad" required>
+                <br>Certificado</br>
+                <input type="file" @change="onFileChange" required >
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+
+        <main v-else>
+            <div class="profile">
+                <div class="user-info">
+                    <img src="abogado696.jpg" width="250px">
+                    <br>
+                    <br>                   
+                     <img src="images.png" alt="Cámara" class="camera-icon">
+                    <h2>Pedro Gallego Alcantara</h2>
+                    <img src="Check-Logo.png" alt="Verificado" class="check-icon">
+                    <br><br>
+                    <p>Abogado de violencia familiar</p>
+                </div>
+                <br>
+                <button class="consultar">Consultar</button>
+
+                <h3>Proponer Precios</h3>
+                <header>
+                <div class="pricing-options">
+                    <div class="pricing-option" v-for="(option, index) in options" :key="index" @click="toggleOption(index)">
+                        <span>{{ option.text }}</span>
+                        <span :class="{'selected': option.selected}"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+            <aside>
+                <h3>Más Perfiles en Común</h3>
+                <div v-for="(lawyer, index) in lawyers" :key="index" class="lawyer-profile">
+                    <h4>{{ lawyer.name }}</h4>
+                    <img :src="lawyer.image" width="200px">
+                    <p>{{ lawyer.function }}</p>
+                    <div class="stars">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <button>Ver Perfil</button>
+                    <hr>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app2.js"></script>
+</body>
+</html>
