@@ -1,5 +1,5 @@
 <div class="recommendation-container">
-  <h3>RECOMENDACIONES</h3>
+  <h3 class="mat-title-small">RECOMENDACIONES</h3>
 
   <div *ngIf="lawyers.length > 0" class="recommendation-card">
     <button (click)="prevLawyer()" [disabled]="currentIndex === 0">
@@ -8,11 +8,14 @@
 
     <div class="lawyer-info">
       <img [src]="currentLawyer.image_profile" alt="{{ currentLawyer.name }}" class="lawyer-image">
-      <h4>{{ currentLawyer.name }} {{ currentLawyer.lastname }}</h4>
-      <p>{{ currentLawyer.speciality }}</p>
-      <div class="stars">
+      <div class="info-container">
+        <h4>{{ currentLawyer.name }} {{ currentLawyer.lastname }}</h4>
+        <p>{{ currentLawyer.speciality }}</p>
+        <div class="stars">
         <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
               [class.filled]="i < currentLawyer.rating">★</span>
+
+      </div>
       </div>
     </div>
 
@@ -27,7 +30,7 @@
 </div>
 
 <div class="last-casses_container">
-  <h3>ÚLTIMOS CASOS</h3>
+  <h3 class="mat-title-small">ÚLTIMOS CASOS</h3>
 
   <mat-card *ngFor="let last_case of currentLawyer.last_case" class="last-case-card">
     <mat-card-header>

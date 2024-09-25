@@ -5,7 +5,7 @@ export class Client {
   number: string;
   email: string;
   image_profile: string;
-  cases_made: any[]; // Añadimos la propiedad last_case
+  cases_made: any[];
 
   constructor() {
     this.id = 0;

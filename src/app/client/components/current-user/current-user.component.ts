@@ -9,13 +9,17 @@ import {ClientService} from "../../services/client.service";
 })
 export class CurrentUserComponent implements OnInit {
   client: Client = new Client();
+  name: string = '';
+  url_image: string = '';
 
   constructor(private clientService: ClientService) {
   }
 
   ngOnInit(): void {
-    this.clientService.getClientById(0).subscribe((data: any) => {
-      this.client = data;
+    this.clientService.getClientById(1).subscribe((data: any) => {
+      this.client = data[0];
+      this.name = this.client.name + ' ' + this.client.lastname;
+      console.log(this.client);
     });
   }
 

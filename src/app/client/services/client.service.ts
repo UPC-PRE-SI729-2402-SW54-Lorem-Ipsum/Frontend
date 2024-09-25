@@ -13,8 +13,4 @@ export class ClientService {
   getClientById(clientId: number) {
     return this.http.get(`${this.baseUrl}/clients?id=${clientId}`);
   }
-
-  getCurrentClient() {
-    return this.http.get(`${this.baseUrl}/clients/current`);
-  }
 }
