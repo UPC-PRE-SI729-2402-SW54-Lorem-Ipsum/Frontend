@@ -21,6 +21,9 @@ import {HomeComponent} from "./client/pages/home/home.component";
 import {LawyerService} from "./client/services/lawyer.service";
 import { LawyerReComponent } from './client/components/lawyer-re/lawyer-re.component';
 import { CurrentUserComponent } from './client/components/current-user/current-user.component';
+import {FooterComponent} from "./public/components/footer/footer.component";
+import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
+import {NotificationsComponent} from "./public/components/notifications/notifications.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CurrentUserComponent } from './client/components/current-user/current-u
     PageNotFoundComponent,
     HomeComponent,
     LawyerReComponent,
-    CurrentUserComponent
+    CurrentUserComponent,
+    FooterComponent,
+    ToolbarComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
