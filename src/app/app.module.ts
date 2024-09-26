@@ -23,7 +23,8 @@ import { LawyerReComponent } from './client/components/lawyer-re/lawyer-re.compo
 import { CurrentUserComponent } from './client/components/current-user/current-user.component';
 import {FooterComponent} from "./public/components/footer/footer.component";
 import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
-import {NotificationsComponent} from "./public/components/notifications/notifications.component";
+import { CasesComponent } from './lawyer/component/cases/cases.component';
+import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {NotificationsComponent} from "./public/components/notifications/notifica
     CurrentUserComponent,
     FooterComponent,
     ToolbarComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    CasesComponent
   ],
   imports: [
     BrowserModule,
