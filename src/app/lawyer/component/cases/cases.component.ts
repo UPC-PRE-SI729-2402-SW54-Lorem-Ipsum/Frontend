@@ -17,7 +17,7 @@ export class CasesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.lawyerService.getLawyerById(1).subscribe((data: any) => {
+    this.lawyerService.getLawyerById(2).subscribe((data: any) => {
       this.lawyer = data[0];
       this.name = this.lawyer.name + ' ' + this.lawyer.lastname;
       console.log(this.lawyer);
