@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-notifications',
-  standalone: true,
-  imports: [NgFor, NgIf, MatButtonModule, MatIconModule],
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })

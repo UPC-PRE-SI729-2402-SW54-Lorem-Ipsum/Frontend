@@ -9,16 +9,6 @@ import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-toolbar',
-  standalone: true,
-  imports: [
-    MatToolbar,
-    MatButton,
-    RouterLink,
-    MatFormField,
-    MatInput,
-    MatIcon,
-    NgOptimizedImage
-  ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
 })
