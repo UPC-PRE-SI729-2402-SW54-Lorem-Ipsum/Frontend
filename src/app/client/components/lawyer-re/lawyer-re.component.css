@@ -1,0 +1,71 @@
+.recommendation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.recommendation-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #D9D9D9;
+}
+
+.lawyer-info {
+  display: flex;
+  text-align: center;
+}
+
+.lawyer-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+.stars span {
+  font-size: 20px;
+  color: #ddd;
+}
+
+.stars .filled {
+  color: gold;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.last-casses_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}

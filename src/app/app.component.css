@@ -1,0 +1,8 @@
+.main-layout {
+  display: flex;
+}
+
+
+.content-panel {
+  width: 75%;  /* El resto del espacio será para el contenido dinámico */
+}
