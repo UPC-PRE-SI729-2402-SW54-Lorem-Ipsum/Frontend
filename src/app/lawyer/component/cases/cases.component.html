@@ -1,0 +1,36 @@
+<div class="casos-container">
+  <div class="user-profile">
+    <img [src]="lawyer.image_profile" alt="User Avatar" class="avatar">
+    <h2>{{ name }}</h2>
+    <p>{{lawyer.speciality}}</p>
+  </div>
+
+  <div class="casos-content">
+    <div class="search-section">
+      <h3>Búsqueda de casos sugeridas</h3>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput placeholder="Buscar casos" [(ngModel)]="searchQuery">
+      </mat-form-field>
+      <div class="suggestions">
+        <span class="suggestion">Violencia Doméstica</span>
+        <span class="suggestion">Divorcio y Separación Legal</span>
+        <span class="suggestion">Matrimonio</span>
+        <span class="suggestion">Custodia y Visita de Menores</span>
+      </div>
+    </div>
+
+    <div class="recent-cases-section">
+      <h3>Últimos casos</h3>
+      <div class="caso-item" *ngFor="let caso of lawyer.last_case">
+        <div class="estado {{ caso.status === 'ABIERTO' ? 'abierto' : 'cerrado' }}">
+          {{ caso.status }}
+        </div>
+        <div class="caso-info">
+          <h4>{{ caso.name }}</h4>
+          <p>{{ caso.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
