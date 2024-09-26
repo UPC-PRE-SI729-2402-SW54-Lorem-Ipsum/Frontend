@@ -18,7 +18,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {AppRoutingModule} from "./app-routing.module";
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
 import {HomeComponent} from "./client/pages/home/home.component";
-import {LawyerService} from "./client/services/lawyer.service";
+import {LawyerService} from "./lawyer/services/lawyer.service";
 import { LawyerReComponent } from './client/components/lawyer-re/lawyer-re.component';
 import { CurrentUserComponent } from './client/components/current-user/current-user.component';
 import {FooterComponent} from "./public/components/footer/footer.component";

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {LawyerService} from "../../services/lawyer.service";
-import {Lawyer} from "../../model/lawyer";
+import {LawyerService} from "../../../lawyer/services/lawyer.service";
+import {Lawyer} from "../../../lawyer/model/lawyer";
 
 
 @Component({
