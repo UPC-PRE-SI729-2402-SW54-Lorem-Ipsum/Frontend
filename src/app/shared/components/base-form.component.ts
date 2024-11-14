@@ -16,6 +16,7 @@ export class BaseFormComponent {
     }
   }
 
+  // Used to control the error messages of the form control.
   protected errorMessagesForControl(form: FormGroup, controlName: string) {
     const control = form.controls[controlName];
     let errorMessages = "";
