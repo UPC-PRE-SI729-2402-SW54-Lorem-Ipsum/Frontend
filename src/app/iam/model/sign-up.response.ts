@@ -1,4 +1,9 @@
 export class SignUpResponse {
-  constructor(public id: number, public email: string) {
+  public id: number;
+  public username: string;
+
+  constructor(id: number, username: string) {
+    this.id = id;
+    this.username = username;
   }
 }

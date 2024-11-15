@@ -1,5 +1,11 @@
 export class LogInResponse {
   // TO-DO: Add token property
-  constructor(public id: number, public email: string) {
+
+  public id: number;
+  public username: string;
+
+  constructor(id: number, username: string) {
+    this.id = id;
+    this.username = username;
   }
 }

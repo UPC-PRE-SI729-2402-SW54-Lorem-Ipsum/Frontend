@@ -1,6 +1,11 @@
 // Class to hold the log in request data
 
 export class LogInRequest {
-  constructor(public email: string, public password: string) {
+  public username: string;
+  public password: string;
+
+  constructor(username: string, password: string) {
+    this.username = username;
+    this.password = password;
   }
 }
