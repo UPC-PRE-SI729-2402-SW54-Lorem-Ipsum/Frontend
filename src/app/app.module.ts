@@ -26,12 +26,12 @@ import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import { CasesComponent } from './lawyer/component/cases/cases.component';
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
 import { LogInComponent } from './iam/pages/log-in/log-in.component';
-import { SignUpComponent } from './iam/pages/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './iam/pages/forgot-password/forgot-password.component';
 import { SignUpLawyerComponent } from './iam/pages/sign-up-lawyer/sign-up-lawyer.component';
 import { SignUpClientComponent } from './iam/pages/sign-up-client/sign-up-client.component';
-import { ChooseRolComponent } from './iam/pages/choose-rol/choose-rol.component';
 import { AddSpecializationAndPriceComponent } from './iam/pages/add-specialization-and-price/add-specialization-and-price.component';
+import { ForLawyersComponent } from './iam/pages/for-lawyers/for-lawyers.component';
+import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +45,12 @@ import { AddSpecializationAndPriceComponent } from './iam/pages/add-specializati
     NotificationsComponent,
     CasesComponent,
     LogInComponent,
-    SignUpComponent,
     ForgotPasswordComponent,
     SignUpLawyerComponent,
     SignUpClientComponent,
-    ChooseRolComponent,
-    AddSpecializationAndPriceComponent
+    AddSpecializationAndPriceComponent,
+    ForLawyersComponent,
+    ChooseRoleComponent
   ],
   imports: [
     BrowserModule,
