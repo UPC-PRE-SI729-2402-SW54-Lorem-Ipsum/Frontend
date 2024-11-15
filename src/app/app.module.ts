@@ -32,6 +32,8 @@ import { SignUpClientComponent } from './iam/pages/sign-up-client/sign-up-client
 import { AddSpecializationAndPriceComponent } from './iam/pages/add-specialization-and-price/add-specialization-and-price.component';
 import { ForLawyersComponent } from './iam/pages/for-lawyers/for-lawyers.component';
 import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.component';
+import { SuccessfulSignUpComponent } from './iam/pages/successful-sign-up/successful-sign-up.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.compone
     SignUpClientComponent,
     AddSpecializationAndPriceComponent,
     ForLawyersComponent,
-    ChooseRoleComponent
+    ChooseRoleComponent,
+    SuccessfulSignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.compone
     MatPaginatorModule,
     MatToolbarModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    NgOptimizedImage
   ],
   providers: [
     provideAnimationsAsync(),

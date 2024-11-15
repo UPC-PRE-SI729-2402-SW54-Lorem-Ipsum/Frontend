@@ -13,6 +13,7 @@ import {ChooseRoleComponent} from "./iam/pages/choose-role/choose-role.component
 import {
   AddSpecializationAndPriceComponent
 } from "./iam/pages/add-specialization-and-price/add-specialization-and-price.component";
+import {SuccessfulSignUpComponent} from "./iam/pages/successful-sign-up/successful-sign-up.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'choose-role', component: ChooseRoleComponent },
   { path: 'for-lawyers', component: ForLawyersComponent },
   { path: 'add-specialization-and-price', component: AddSpecializationAndPriceComponent },
+  { path: 'successful', component: SuccessfulSignUpComponent },
   { path: 'sign-up-lawyer', component: SignUpLawyerComponent },
   { path: 'sign-up-client', component: SignUpClientComponent },
 
