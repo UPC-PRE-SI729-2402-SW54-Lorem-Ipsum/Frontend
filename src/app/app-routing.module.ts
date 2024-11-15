@@ -4,6 +4,7 @@ import {NgModule} from "@angular/core";
 import {HomeComponent} from "./client/pages/home/home.component";
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
 import {CasesComponent} from "./lawyer/component/cases/cases.component";
+import {LogInComponent} from "./iam/pages/log-in/log-in.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   { path: 'notifications', component: NotificationsComponent},
   { path:'cases', component: CasesComponent},
+  { path: 'log-in', component: LogInComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 ];
