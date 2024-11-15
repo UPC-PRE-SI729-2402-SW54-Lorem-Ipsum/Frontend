@@ -16,7 +16,7 @@ export class ChooseRoleComponent {
       this.router.navigate(['/sign-up-client']);
     }
     else if (role === 'abogado') {
-      this.router.navigate(['/sign-up-lawyer']);
+      this.router.navigate(['/for-lawyers']);
     }
   }
 }
