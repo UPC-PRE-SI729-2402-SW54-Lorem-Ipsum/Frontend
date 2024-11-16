@@ -25,7 +25,7 @@ import {FooterComponent} from "./public/components/footer/footer.component";
 import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import { CasesComponent } from './lawyer/component/cases/cases.component';
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
-import { LogInComponent } from './iam/pages/log-in/log-in.component';
+import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './iam/pages/forgot-password/forgot-password.component';
 import { SignUpLawyerComponent } from './iam/pages/sign-up-lawyer/sign-up-lawyer.component';
 import { SignUpClientComponent } from './iam/pages/sign-up-client/sign-up-client.component';
@@ -46,7 +46,7 @@ import {NgOptimizedImage} from "@angular/common";
     ToolbarComponent,
     NotificationsComponent,
     CasesComponent,
-    LogInComponent,
+    SignInComponent,
     ForgotPasswordComponent,
     SignUpLawyerComponent,
     SignUpClientComponent,
