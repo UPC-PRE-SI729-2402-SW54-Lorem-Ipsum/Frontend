@@ -25,6 +25,7 @@ import {FooterComponent} from "./public/components/footer/footer.component";
 import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import { CasesComponent } from './lawyer/component/cases/cases.component';
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
+import { ProfileComponent } from './lawyer/component/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {NotificationsComponent} from "./lawyer/component/notifications/notificat
     FooterComponent,
     ToolbarComponent,
     NotificationsComponent,
-    CasesComponent
+    CasesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

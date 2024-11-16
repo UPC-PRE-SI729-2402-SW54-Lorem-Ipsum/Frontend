@@ -1,0 +1,151 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Columna izquierda (perfil + actividad) */
+.left-column {
+  flex: 2;
+  max-width: 850px;
+  margin-right: 20px;
+}
+
+/* Columna derecha (recomendados) */
+.right-column {
+  flex: 1;
+  max-width: 350px;
+}
+
+/* Contenedor de perfil */
+.profile-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.cover-square {
+  width: 100%;
+  height: 96px;
+  background-color: #263157;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.profile-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.verified {
+  color: #3498db;
+}
+
+.profession {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.consult-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Contenedor de actividad */
+.activity-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.activity {
+  margin-bottom: 20px;
+}
+
+.activity h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.activity p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Contenedor de recomendados */
+.recommendations-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.recommendations-container h3 {
+  margin-bottom: 15px;
+}
+
+.recommended-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.recommended-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.stars {
+  color: #f39c12;
+}
