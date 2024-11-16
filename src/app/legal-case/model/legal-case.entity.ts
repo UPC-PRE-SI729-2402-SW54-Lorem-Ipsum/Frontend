@@ -1,4 +1,4 @@
-import {DocumentsItem} from "./documents-item.entity";
+import {Documents} from "./documents.entity";
 
 export class LegalCase {
   id: number;
@@ -6,7 +6,7 @@ export class LegalCase {
   description: string;
   status: string;
   consultationId: number;
-  documents: DocumentsItem[];
+  documents: Documents[];
 
   constructor() {
     this.id = 0;

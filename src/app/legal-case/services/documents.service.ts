@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {catchError, Observable, throwError} from "rxjs";
+import {catchError, Observable, retry, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -28,18 +28,17 @@ export class DocumentsService {
 
   createDocument(document: Document) {
     return this.http.post<Document>(`${this.basePath}/documents`, document)
-        .pipe(catchError(this.handleError));
+        .pipe(retry(2), catchError(this.handleError));
   }
 
   changeDocumentStatus(documentId: number, status: string) {
     return this.http.patch<Document>(`${this.basePath}/documents/status/${documentId}`, {status})
-
-        .pipe(catchError(this.handleError));
+        .pipe(retry(2), catchError(this.handleError));
   }
 
   getDocumentById(documentId: number): Observable<Document> {
     return this.http.get<Document>(`${this.basePath}/documents/${documentId}`)
-        .pipe(catchError(this.handleError));
+        .pipe(retry(2), catchError(this.handleError));
   }
 
 
