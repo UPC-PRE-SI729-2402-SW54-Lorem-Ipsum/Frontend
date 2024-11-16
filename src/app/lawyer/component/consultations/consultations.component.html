@@ -42,13 +42,6 @@
           <button
             mat-button
             color="primary"
-            (click)="viewDetails(consultation.id)"
-          >
-            Ver Detalles
-          </button>
-          <button
-            mat-button
-            color="accent"
             (click)="approveConsultation(consultation.id)"
             *ngIf="consultation.applicationStatus === 'PENDING'"
           >

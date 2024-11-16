@@ -3,11 +3,11 @@ import { LawyerService } from '../../services/lawyer.service';
 import { Lawyer } from '../../model/lawyer';
 
 @Component({
-  selector: 'app-cases',
-  templateUrl: './cases.component.html',
-  styleUrls: ['./cases.component.css']
+  selector: 'app-consultations',
+  templateUrl: './consultations.component.html',
+  styleUrls: ['./consultations.component.css']
 })
-export class CasesComponent implements OnInit {
+export class ConsultationsComponent implements OnInit {
   lawyer: Lawyer = new Lawyer();
   name: string = '';
   searchQuery: string = '';
@@ -46,26 +46,26 @@ export class CasesComponent implements OnInit {
   }
 
   approveConsultation(consultationId: number): void {
-    this.lawyerService.updateConsultationStatus(consultationId, 'APPROVED').subscribe({
-      next: () => {
-        alert('Consulta aprobada con éxito.');
-        this.loadConsultations();
-      },
-      error: (err: any) => console.error('Error al aprobar consulta:', err)
-    });
+    this.lawyerService
+      .updateConsultationStatus(consultationId, 'APPROVED')
+      .subscribe({
+        next: () => {
+          alert('Consulta aprobada con éxito.');
+          this.loadConsultations();
+        },
+        error: (err) => console.error('Error al aprobar consulta:', err)
+      });
   }
 
   rejectConsultation(consultationId: number): void {
-    this.lawyerService.updateConsultationStatus(consultationId, 'REJECTED').subscribe({
-      next: () => {
-        alert('Consulta rechazada con éxito.');
-        this.loadConsultations();
-      },
-      error: (err: any) => console.error('Error al rechazar consulta:', err)
-    });
-  }
-
-  viewDetails(consultationId: number): void {
-    console.log(`Detalles de la consulta con ID: ${consultationId}`);
+    this.lawyerService
+      .updateConsultationStatus(consultationId, 'REJECTED')
+      .subscribe({
+        next: () => {
+          alert('Consulta rechazada con éxito.');
+          this.loadConsultations();
+        },
+        error: (err) => console.error('Error al rechazar consulta:', err)
+      });
   }
 }

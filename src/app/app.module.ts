@@ -34,6 +34,7 @@ import { ForLawyersComponent } from './iam/pages/for-lawyers/for-lawyers.compone
 import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.component';
 import { SuccessfulSignUpComponent } from './iam/pages/successful-sign-up/successful-sign-up.component';
 import {NgOptimizedImage} from "@angular/common";
+import { ConsultationsComponent } from './lawyer/component/consultations/consultations.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {NgOptimizedImage} from "@angular/common";
     AddSpecializationAndPriceComponent,
     ForLawyersComponent,
     ChooseRoleComponent,
-    SuccessfulSignUpComponent
+    SuccessfulSignUpComponent,
+    ConsultationsComponent
   ],
   imports: [
     BrowserModule,
