@@ -31,6 +31,12 @@ export class DocumentsService {
         .pipe(catchError(this.handleError));
   }
 
+  changeDocumentStatus(documentId: number, status: string) {
+    return this.http.patch<Document>(`${this.basePath}/documents/status/${documentId}`, {status})
+
+        .pipe(catchError(this.handleError));
+  }
+
   getDocumentById(documentId: number): Observable<Document> {
     return this.http.get<Document>(`${this.basePath}/documents/${documentId}`)
         .pipe(catchError(this.handleError));
