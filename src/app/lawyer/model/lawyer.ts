@@ -7,7 +7,7 @@ export class Lawyer {
   email: string;
   rating: number;
   image_profile: string;
-  last_case: any[]; // Añadimos la propiedad last_case
+  last_case: any[];
 
   constructor() {
     this.id = 0;
