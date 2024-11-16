@@ -1,6 +1,6 @@
 // Class to hold the log in request data
 
-export class LogInRequest {
+export class SignInRequest {
   public username: string;
   public password: string;
 
