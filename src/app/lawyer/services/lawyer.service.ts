@@ -15,4 +15,8 @@ export class LawyerService {
   getAllLawyers() {
     return this.http.get(`${this.baseUrl}/lawyers`);
   }
+
+  getLawyerById(lawyerId: number) {
+    return this.http.get(`${this.baseUrl}/lawyers?id=${lawyerId}`);
+  }
 }

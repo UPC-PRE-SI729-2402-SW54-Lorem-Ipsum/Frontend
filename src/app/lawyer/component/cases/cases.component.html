@@ -1,8 +1,8 @@
 <div class="casos-container">
   <div class="user-profile">
-    <img src="https://via.placeholder.com/100" alt="User Avatar" class="avatar">
-    <h2>Juan Pérez</h2>
-    <p>Abogado especializado en derecho familiar.</p>
+    <img [src]="lawyer.image_profile" alt="User Avatar" class="avatar">
+    <h2>{{ name }}</h2>
+    <p>{{lawyer.speciality}}</p>
   </div>
 
   <div class="casos-content">
@@ -22,13 +22,13 @@
 
     <div class="recent-cases-section">
       <h3>Últimos casos</h3>
-      <div class="caso-item" *ngFor="let caso of casos">
-        <div class="estado {{ caso.estado === 'ABIERTO' ? 'abierto' : 'cerrado' }}">
-          {{ caso.estado }}
+      <div class="caso-item" *ngFor="let caso of lawyer.last_case">
+        <div class="estado {{ caso.status === 'ABIERTO' ? 'abierto' : 'cerrado' }}">
+          {{ caso.status }}
         </div>
         <div class="caso-info">
-          <h4>{{ caso.titulo }}</h4>
-          <p>{{ caso.descripcion }}</p>
+          <h4>{{ caso.name }}</h4>
+          <p>{{ caso.description }}</p>
         </div>
       </div>
     </div>

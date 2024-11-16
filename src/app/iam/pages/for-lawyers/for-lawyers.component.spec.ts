@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotificationsComponent } from './notifications.component';
+import { ForLawyersComponent } from './for-lawyers.component';
 
-describe('NotificationsComponent', () => {
-  let component: NotificationsComponent;
-  let fixture: ComponentFixture<NotificationsComponent>;
+describe('ForLawyersComponent', () => {
+  let component: ForLawyersComponent;
+  let fixture: ComponentFixture<ForLawyersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NotificationsComponent]
+      declarations: [ForLawyersComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NotificationsComponent);
+    fixture = TestBed.createComponent(ForLawyersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
