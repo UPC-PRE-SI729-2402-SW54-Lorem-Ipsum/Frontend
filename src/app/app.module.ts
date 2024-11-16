@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -25,6 +25,15 @@ import {FooterComponent} from "./public/components/footer/footer.component";
 import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import { CasesComponent } from './lawyer/component/cases/cases.component';
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
+import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
+import { ForgotPasswordComponent } from './iam/pages/forgot-password/forgot-password.component';
+import { SignUpLawyerComponent } from './iam/pages/sign-up-lawyer/sign-up-lawyer.component';
+import { SignUpClientComponent } from './iam/pages/sign-up-client/sign-up-client.component';
+import { AddSpecializationAndPriceComponent } from './iam/pages/add-specialization-and-price/add-specialization-and-price.component';
+import { ForLawyersComponent } from './iam/pages/for-lawyers/for-lawyers.component';
+import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.component';
+import { SuccessfulSignUpComponent } from './iam/pages/successful-sign-up/successful-sign-up.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -36,7 +45,15 @@ import {NotificationsComponent} from "./lawyer/component/notifications/notificat
     FooterComponent,
     ToolbarComponent,
     NotificationsComponent,
-    CasesComponent
+    CasesComponent,
+    SignInComponent,
+    ForgotPasswordComponent,
+    SignUpLawyerComponent,
+    SignUpClientComponent,
+    AddSpecializationAndPriceComponent,
+    ForLawyersComponent,
+    ChooseRoleComponent,
+    SuccessfulSignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +70,8 @@ import {NotificationsComponent} from "./lawyer/component/notifications/notificat
     MatPaginatorModule,
     MatToolbarModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    NgOptimizedImage
   ],
   providers: [
     provideAnimationsAsync(),
