@@ -1,4 +1,4 @@
-export class DocumentsItem {
+export class Documents {
   id: number;
   title: string;
   description: string;
