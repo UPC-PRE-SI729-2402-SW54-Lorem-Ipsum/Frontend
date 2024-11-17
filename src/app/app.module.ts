@@ -25,9 +25,7 @@ import {FooterComponent} from "./public/components/footer/footer.component";
 import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import { CasesComponent } from './lawyer/component/cases/cases.component';
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
-import { ProfileComponent } from './lawyer/component/profile/profile.component';
-import { ModelComponent } from './app/profiles/lawyers/model/model.component';
-import { ServicesComponent } from './profiles/lawyers/services/services.component';
+
 import { ProfileLawyerComponent } from './profiles/lawyers/pages/profile-lawyer/profile-lawyer.component';
 import { CaseInformationComponent } from './profiles/lawyers/pages/case-information/case-information.component';
 import { ChooseQueryComponent } from './profiles/lawyers/pages/choose-query/choose-query.component';
@@ -46,9 +44,6 @@ import { FaceToFaceAppointmentCalendarComponent } from './profiles/lawyers/pages
     ToolbarComponent,
     NotificationsComponent,
     CasesComponent,
-    ProfileComponent,
-    ModelComponent,
-    ServicesComponent,
     ProfileLawyerComponent,
     CaseInformationComponent,
     ChooseQueryComponent,
