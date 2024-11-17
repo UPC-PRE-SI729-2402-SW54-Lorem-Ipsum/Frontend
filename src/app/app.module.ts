@@ -34,7 +34,7 @@ import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.compone
 import { SuccessfulSignUpComponent } from './iam/pages/successful-sign-up/successful-sign-up.component';
 import {NgOptimizedImage} from "@angular/common";
 import {provideNativeDateAdapter} from "@angular/material/core";
-import { AuthenticationSectionComponent } from './iam/authentication-section/authentication-section.component';
+import { AuthenticationSectionComponent } from './iam/component/authentication-section/authentication-section.component';
 import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
 import {AuthenticationService} from "./iam/services/authentication.service";
 
