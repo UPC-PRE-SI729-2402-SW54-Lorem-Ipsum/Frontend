@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -31,8 +32,11 @@ import { AddSpecializationAndPriceComponent } from './iam/pages/add-specializati
 import { ForLawyersComponent } from './iam/pages/for-lawyers/for-lawyers.component';
 import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.component';
 import { SuccessfulSignUpComponent } from './iam/pages/successful-sign-up/successful-sign-up.component';
-import { NgOptimizedImage } from '@angular/common';
-import { AuthenticationInterceptor } from './iam/services/authentication.interceptor';
+import {NgOptimizedImage} from "@angular/common";
+import {provideNativeDateAdapter} from "@angular/material/core";
+import { AuthenticationSectionComponent } from './iam/authentication-section/authentication-section.component';
+import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
+import {AuthenticationService} from "./iam/services/authentication.service";
 
 @NgModule({
   declarations: [
@@ -53,6 +57,8 @@ import { AuthenticationInterceptor } from './iam/services/authentication.interce
     ForLawyersComponent,
     ChooseRoleComponent,
     SuccessfulSignUpComponent,
+    AuthenticationSectionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -73,12 +79,15 @@ import { AuthenticationInterceptor } from './iam/services/authentication.interce
     NgOptimizedImage,
   ],
   providers: [
-    LawyerService,
+    provideAnimationsAsync(),
+    provideNativeDateAdapter(),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
-      multi: true,
+      multi: true
     },
+    LawyerService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent],
 })

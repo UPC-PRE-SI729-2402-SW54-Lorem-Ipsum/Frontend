@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
+import { SignInRequest } from '../../model/sign-in.request';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,12 +12,14 @@ export class SignInComponent {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthenticationService) {
+    this.authService.signOut();
   }
 
-  // onSubmit() {
-  //   this.router.navigate(['/home']);
-  // }
+  signIn() {
+    const signInRequest = new SignInRequest(this.username, this.password);
+    this.authService.signIn(signInRequest);
+  }
 
   navigateTo(route: string) {
     this.router.navigate([`/${route}`]);
