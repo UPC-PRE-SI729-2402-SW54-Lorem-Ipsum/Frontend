@@ -1,1 +1,41 @@
-<p>chatroom works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat con Abogado</title>
+  <link rel="stylesheet" href="chatroom.component.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+  <div class="chat-container">
+    <!-- Encabezado del chat -->
+    <div class="chat-header">
+      <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="profile-photo">
+      <div class="chat-info">
+        <h4>Pedro Gallego Alcantara</h4>
+        <p>Abogado de violencia familiar</p>
+      </div>
+    </div>
+
+    <!-- Área de mensajes -->
+    <div class="chat-messages">
+      <div class="message received">Hola, ¿en qué puedo ayudarte?</div>
+      <div class="message sent">Quisiera saber los pasos para iniciar un proceso de divorcio.</div>
+    </div>
+
+    <!-- Controles de envío -->
+    <div class="chat-controls">
+      <label for="file-input" class="file-label">
+        📎
+        <input type="file" id="file-input" class="file-input">
+      </label>
+      <input type="text" placeholder="Escribe tu mensaje..." class="message-input">
+      <button class="send-button">Enviar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

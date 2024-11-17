@@ -1,0 +1,162 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Columna izquierda */
+.left-column {
+  flex: 2;
+  max-width: 850px;
+  margin-right: 20px;
+}
+
+/* Columna derecha */
+.right-column {
+  flex: 1;
+  max-width: 350px;
+}
+
+/* Contenedor de perfil */
+.profile-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.cover-square {
+  width: 100%;
+  height: 96px;
+  background-color: #263157;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.profile-info {
+  padding: 20px;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.verified {
+  color: #3498db;
+}
+
+.profession {
+  font-size: 14px;
+  color: #555;
+}
+
+.consult-button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Contenedor de consulta */
+.activity-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.activity-container h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.activity-container p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.consultation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.video-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.in-person-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+/* Contenedor de recomendados */
+.recommendations-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.recommended-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.recommended-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.stars {
+  color: #f39c12;
+}

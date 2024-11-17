@@ -1,0 +1,145 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor principal centrado */
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenedor del chat */
+.chat-container {
+  width: 100%;
+  max-width: 400px;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado del chat */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #c2c2c2;
+  background-color: #fff;
+  color: #000000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-info h4 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.chat-info p {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* Contenedor de los mensajes */
+.chat-messages {
+  flex: 1;
+  padding: 10px; /* Reduce el padding excesivo */
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px; /* Ajusta la altura máxima para evitar que el chat se desborde */
+  border-radius: 10px;
+}
+
+/* Estilo de los mensajes */
+.message {
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  border-radius: 20px;
+  max-width: 90%; /* Ajusta la anchura */
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+/* Mensajes recibidos */
+.received {
+  background-color: #e1e1e1;
+  color: #333;
+  align-self: flex-start; /* Alineación a la izquierda */
+  border-top-left-radius: 0;
+  border-top-right-radius: 20px;
+  max-width: 90%;
+}
+
+/* Mensajes enviados */
+.sent {
+  background-color: #632525;
+  color: #fff;
+  align-self: flex-end; /* Alineación a la derecha */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0;
+  max-width: 90%;
+}
+
+/* Controles de envío */
+.chat-controls {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.file-label {
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.file-input {
+  display: none;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.send-button {
+  padding: 10px 15px;
+  background-color: #632525;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
