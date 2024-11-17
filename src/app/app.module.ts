@@ -3,28 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatInputModule} from "@angular/material/input";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatButtonModule} from "@angular/material/button";
-import {MatTableModule} from "@angular/material/table";
-import {MatSortModule} from "@angular/material/sort";
-import {MatIconModule} from "@angular/material/icon";
-import {MatPaginatorModule} from "@angular/material/paginator";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatCardModule} from "@angular/material/card";
-import {MatGridListModule} from "@angular/material/grid-list";
-import {AppRoutingModule} from "./app-routing.module";
-import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
-import {HomeComponent} from "./client/pages/home/home.component";
-import {LawyerService} from "./lawyer/services/lawyer.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
+import { HomeComponent } from './client/pages/home/home.component';
+import { LawyerService } from './lawyer/services/lawyer.service';
 import { LawyerReComponent } from './client/components/lawyer-re/lawyer-re.component';
 import { CurrentUserComponent } from './client/components/current-user/current-user.component';
-import {FooterComponent} from "./public/components/footer/footer.component";
-import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
+import { FooterComponent } from './public/components/footer/footer.component';
+import { ToolbarComponent } from './public/components/toolbar/toolbar.component';
 import { CasesComponent } from './lawyer/component/cases/cases.component';
-import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
+import { NotificationsComponent } from './lawyer/component/notifications/notifications.component';
 import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './iam/pages/forgot-password/forgot-password.component';
 import { SignUpLawyerComponent } from './iam/pages/sign-up-lawyer/sign-up-lawyer.component';
@@ -59,6 +58,7 @@ import {AuthenticationService} from "./iam/services/authentication.service";
     ChooseRoleComponent,
     SuccessfulSignUpComponent,
     AuthenticationSectionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -76,7 +76,7 @@ import {AuthenticationService} from "./iam/services/authentication.service";
     MatToolbarModule,
     MatCardModule,
     MatGridListModule,
-    NgOptimizedImage
+    NgOptimizedImage,
   ],
   providers: [
     provideAnimationsAsync(),
@@ -89,6 +89,6 @@ import {AuthenticationService} from "./iam/services/authentication.service";
     LawyerService,
     AuthenticationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

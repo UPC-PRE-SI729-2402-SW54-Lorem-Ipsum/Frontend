@@ -9,7 +9,7 @@ import { SignInRequest } from '../model/sign-in.request';
 import { SignInResponse } from '../model/sign-in.response';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
   basePath: string = `${environment.serverBasePath}`;
@@ -43,7 +43,12 @@ export class AuthenticationService {
   }
 
   signUp(signUpRequest: SignUpRequest) {
-    return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
+    this.http
+      .post<SignUpResponse>(
+        `${this.basePath}/authentication/sign-up`,
+        signUpRequest,
+        this.httpOptions
+      )
       .subscribe({
         next: (response) => {
           console.log(`Signed with id ${response.id}`);
@@ -51,8 +56,8 @@ export class AuthenticationService {
         },
         error: (error) => {
           console.error(`Error while signing up: ${error}`);
-          this.router.navigate(['/sign-up']).then();
-        }
+          this.router.navigate(['/sign-up']);
+        },
       });
   }
 
@@ -77,6 +82,7 @@ export class AuthenticationService {
           localStorage.removeItem('token');
           this.router.navigate(['/sign-in']).then();
         }
+
       });
   }
 
@@ -86,6 +92,6 @@ export class AuthenticationService {
     this.signedInUsername.next('');
     this.signedInUserRole.next('');
     localStorage.removeItem('token');
-    this.router.navigate(['/sign-in']).then();
+    this.router.navigate(['/sign-in']);
   }
 }
