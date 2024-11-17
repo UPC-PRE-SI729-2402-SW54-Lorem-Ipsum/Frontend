@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Lawyer} from "../model/lawyer";
+import {Lawyer} from "../../profiles/lawyers/model/lawyer";
 import {BaseService} from "../../shared/services/base.service";
 import {HttpClient} from "@angular/common/http";
 
