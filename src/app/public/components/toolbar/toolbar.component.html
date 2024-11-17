@@ -24,9 +24,16 @@
     Casos
   </button>
 
-  <button mat-button class="btn" [routerLink]="['/']">
-
+  <button *ngIf="userRole === 'LAWYER'" mat-button class="btn" [routerLink]="['/']">
     <mat-icon>gavel</mat-icon>
     Para abogados
   </button>
+
+  <button *ngIf="userRole === 'CLIENT'" mat-button class="btn" [routerLink]="['/']">
+    <mat-icon>gavel</mat-icon>
+    Ver solicitudes
+  </button>
+
+
+
 </mat-toolbar>

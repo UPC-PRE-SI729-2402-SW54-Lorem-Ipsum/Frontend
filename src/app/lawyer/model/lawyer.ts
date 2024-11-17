@@ -1,25 +1,15 @@
-import { Case } from './case';
+import { Profile } from '../../profile/model/profile';
 
 export class Lawyer {
   id: number;
-  name: string;
-  lastname: string;
-  speciality: string;
-  number: string;
-  email: string;
-  rating: number;
-  image_profile: string;
-  last_case: Case[];
+  profile: Profile;
+  lawyerTypes: string[];
+  prices: number;
 
   constructor() {
     this.id = 0;
-    this.name = '';
-    this.lastname = '';
-    this.speciality = '';
-    this.number = '';
-    this.email = '';
-    this.rating = 0;
-    this.image_profile = '';
-    this.last_case = [];
+    this.profile = new Profile();
+    this.lawyerTypes = [];
+    this.prices = 0;
   }
 }
