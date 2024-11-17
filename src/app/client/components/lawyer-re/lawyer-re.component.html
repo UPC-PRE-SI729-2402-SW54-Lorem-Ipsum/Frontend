@@ -1,0 +1,59 @@
+<div class="recommendation-container">
+  <h3 class="mat-title-small">RECOMENDACIONES</h3>
+
+  <div class="recommendation-card">
+    <!-- Botón Izquierda -->
+    <button class="navigation-btn" (click)="prevLawyer()" [disabled]="currentIndex === 0">
+      &lt;
+    </button>
+
+    <!-- Información del Abogado -->
+    <div class="lawyer-info">
+      <img src="ruta/a/imagen.jpg" alt="Lucas Aldave" class="lawyer-image">
+      <div class="info-container">
+        <h4>Lucas Aldave</h4> <!-- Nombre del abogado -->
+        <p>Abogado de Violencia Familiar</p> <!-- Especialidad -->
+        <div class="stars">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index" [class.filled]="i < 5">★</span> <!-- Estrellas fijas -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón Derecha -->
+    <button class="navigation-btn" (click)="nextLawyer()" [disabled]="currentIndex === lawyers.length - 1">
+      &gt;
+    </button>
+  </div>
+</div>
+
+<!-- Sección Últimos Casos -->
+<div class="recent-cases-section">
+  <h3 class="mat-title-small">ÚLTIMOS CASOS</h3>
+
+  <!-- Caso: Maltrato Animal -->
+  <mat-card class="caso-item">
+    <div class="estado abierto">ABIERTO</div>
+    <mat-card-content class="caso-info">
+      <h4>Maltrato Animal</h4>
+      <p>Se trata de un caso sobre maltrato animal en un refugio local.</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Caso: Pensión Alimenticia -->
+  <mat-card class="caso-item">
+    <div class="estado abierto">ABIERTO</div>
+    <mat-card-content class="caso-info">
+      <h4>Pensión Alimenticia</h4>
+      <p>Un cliente solicita asesoría legal para establecer una pensión alimenticia.</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Caso: Pensión Alimenticia (Duplicado Intencional) -->
+  <mat-card class="caso-item">
+    <div class="estado abierto">ABIERTO</div>
+    <mat-card-content class="caso-info">
+      <h4>Pensión Alimenticia</h4>
+      <p>Revisión de los términos legales para una pensión alimenticia acordada.</p>
+    </mat-card-content>
+  </mat-card>
+</div>

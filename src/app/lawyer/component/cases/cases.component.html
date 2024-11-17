@@ -1,0 +1,71 @@
+<div class="casos-container">
+  <div class="user-profile">
+    <img src="/Frontend-develop/src/assets/images/abogado696.jpg" alt="Lucas Ghersi">
+    <h4>USUARIO 1</h4>
+    ------------------------------------------
+    <h4 class="mis-casos">
+      Mis Casos: <span class="suggestion">10</span>
+    </h4>
+    <h4>{{ name }}</h4>
+    <p>{{lawyer.speciality}}</p>
+  </div>
+
+  <div class="casos-content">
+    <div class="search-section">
+      <h3>Búsqueda de casos sugeridas</h3>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput placeholder="Buscar casos" [(ngModel)]="searchQuery">
+      </mat-form-field>
+      <div class="suggestions">
+        <span class="suggestion">Violencia Doméstica</span>
+        <span class="suggestion">Divorcio y Separación Legal</span>
+        <span class="suggestion">Matrimonio</span>
+        <span class="suggestion">Custodia y Visita de Menores</span>
+      </div>
+    </div>
+
+    <div class="recent-cases-section">
+      <h3>ABOGADOS TOP</h3>
+
+      <!-- Abogado 1 -->
+      <div class="caso-item">
+        <img src="/Frontend-develop/src/assets/images/lucas-ghersi.jpg" alt="Lucas Ghersi">
+        <div class="caso-info">
+          <h4>Abogado 1</h4>
+          <p>Especialidad: Derecho Familiar</p>
+          <p>Descripción: Amplia experiencia en casos de custodia y divorcio.</p>
+        </div>
+        <div class="disponibilidad disponible">
+          <span class="suggestion">DISPONIBLE</span>
+        </div>
+      </div>
+
+      <!-- Abogado 2 -->
+      <div class="caso-item">
+        <img [src]="'src/assets/abogado2.jpg'" alt="Abogado 2" class="abogado-avatar">
+        <div class="caso-info">
+          <h4>Abogado 2</h4>
+          <p>Especialidad: Derecho Penal</p>
+          <p>Descripción: Experto en casos de violencia doméstica y delitos graves.</p>
+        </div>
+        <div class="disponibilidad disponible">
+          <span class="suggestion">DISPONIBLE</span>
+        </div>
+      </div>
+
+      <!-- Abogado 3 -->
+      <div class="caso-item">
+        <img [src]="'src/assets/abogado3.jpg'" alt="Abogado 3" class="abogado-avatar">
+        <div class="caso-info">
+          <h4>Abogado 3</h4>
+          <p>Especialidad: Derecho Civil</p>
+          <p>Descripción: Ayuda en contratos y litigios civiles.</p>
+        </div>
+        <div class="disponibilidad disponible">
+          <span class="suggestion">DISPONIBLE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
