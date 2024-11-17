@@ -1,3 +1,5 @@
+import { Case } from './case';
+
 export class Lawyer {
   id: number;
   name: string;
@@ -7,7 +9,7 @@ export class Lawyer {
   email: string;
   rating: number;
   image_profile: string;
-  last_case: any[];
+  last_case: Case[];
 
   constructor() {
     this.id = 0;

@@ -1,56 +1,19 @@
-<div class="casos-container">
-  <div class="user-profile">
-    <img [src]="lawyer.image_profile" alt="User Avatar" class="avatar" />
-    <h2>{{ name }}</h2>
-    <p>{{ lawyer.speciality }}</p>
-  </div>
+<div class="recent-cases-section">
+  <h3>Casos</h3>
 
-  <div class="casos-content">
-    <div class="search-section">
-      <h3>Búsqueda de casos sugeridas</h3>
-      <mat-form-field appearance="outline" class="search-bar">
-        <mat-icon matPrefix>search</mat-icon>
-        <input
-          matInput
-          placeholder="Buscar casos"
-          [(ngModel)]="searchQuery"
-          (input)="onSearch()"
-          (keydown.enter)="onSearch()"
-        />
-      </mat-form-field>
-      <div class="suggestions">
-        <span
-          class="suggestion"
-          *ngFor="let suggestion of ['Violencia Doméstica', 'Divorcio', 'Custodia']"
-          (click)="onSuggestionClick(suggestion)"
-        >
-          {{ suggestion }}
-        </span>
+  <div *ngIf="filteredCases.length > 0; else noCasesFound">
+    <div *ngFor="let caseItem of filteredCases" class="caso-item">
+      <div class="estado {{ caseItem.status === 'ABIERTO' ? 'abierto' : 'cerrado' }}">
+        {{ caseItem.status }}
+      </div>
+      <div class="caso-info">
+        <h4>{{ caseItem.title }}</h4>
+        <p>{{ caseItem.description }}</p>
       </div>
     </div>
-
-    <div class="recent-cases-section">
-      <h3>Últimos casos</h3>
-      <ng-container *ngIf="filteredCases.length > 0; else noResults">
-        <div
-          class="caso-item"
-          *ngFor="let caso of filteredCases"
-        >
-          <div
-            class="estado {{ caso.status === 'ABIERTO' ? 'abierto' : 'cerrado' }}"
-          >
-            {{ caso.status }}
-          </div>
-          <div class="caso-info">
-            <h4>{{ caso.title }}</h4>
-            <p>{{ caso.description }}</p>
-          </div>
-        </div>
-      </ng-container>
-      <ng-template #noResults>
-        <p class="no-results">No se encontraron casos para la búsqueda.</p>
-      </ng-template>
-    </div>
-
   </div>
+
+  <ng-template #noCasesFound>
+    <p>No se encontraron casos.</p>
+  </ng-template>
 </div>
