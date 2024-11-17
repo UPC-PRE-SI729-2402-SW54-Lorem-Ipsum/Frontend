@@ -26,6 +26,9 @@ import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import { CasesComponent } from './lawyer/component/cases/cases.component';
 import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
 import { ProfileComponent } from './lawyer/component/profile/profile.component';
+import { ModelComponent } from './app/profiles/lawyers/model/model.component';
+import { ServicesComponent } from './profiles/lawyers/services/services.component';
+import { ProfileLawyerComponent } from './profiles/lawyers/pages/profile-lawyer/profile-lawyer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ProfileComponent } from './lawyer/component/profile/profile.component';
     ToolbarComponent,
     NotificationsComponent,
     CasesComponent,
-    ProfileComponent
+    ProfileComponent,
+    ModelComponent,
+    ServicesComponent,
+    ProfileLawyerComponent
   ],
   imports: [
     BrowserModule,
