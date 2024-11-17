@@ -14,14 +14,15 @@ import {
   AddSpecializationAndPriceComponent
 } from "./iam/pages/add-specialization-and-price/add-specialization-and-price.component";
 import {SuccessfulSignUpComponent} from "./iam/pages/successful-sign-up/successful-sign-up.component";
+import {authenticationGuard} from "./iam/services/authentication.guard";
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent, canActivate: [authenticationGuard]
   },
-  { path: 'notifications', component: NotificationsComponent},
-  { path:'cases', component: CasesComponent},
+  { path: 'notifications', component: NotificationsComponent, canActivate: [authenticationGuard]},
+  { path:'cases', component: CasesComponent, canActivate: [authenticationGuard]},
   { path: 'sign-in', component: SignInComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'choose-role', component: ChooseRoleComponent },
@@ -31,7 +32,7 @@ const routes: Routes = [
   { path: 'sign-up-lawyer', component: SignUpLawyerComponent },
   { path: 'sign-up-client', component: SignUpClientComponent },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 ];
 

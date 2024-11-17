@@ -1,14 +1,13 @@
-import {HttpInterceptorFn} from "@angular/common/http";
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpInterceptorFn, HttpRequest} from "@angular/common/http";
+import {Observable} from "rxjs";
 
-export const authenticationInterceptor: HttpInterceptorFn = (
-  request,
-  next) => {
+export class AuthenticationInterceptor implements HttpInterceptor {
 
-  const token = localStorage.getItem('token');
-  const handledRequest =
-    token
-      ? request.clone({headers: request.headers.set('Authorization', `Bearer ${token}`)}) :
-      request;
-  console.log(handledRequest);
-  return next(handledRequest);
-};
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = localStorage.getItem('token');
+    const handledRequest = token
+      ? request.clone({ headers: request.headers.set('Authorization', `Bearer ${token}`) })
+      : request;
+    return next.handle(handledRequest);
+  }
+}
