@@ -29,6 +29,11 @@ import { ProfileComponent } from './lawyer/component/profile/profile.component';
 import { ModelComponent } from './app/profiles/lawyers/model/model.component';
 import { ServicesComponent } from './profiles/lawyers/services/services.component';
 import { ProfileLawyerComponent } from './profiles/lawyers/pages/profile-lawyer/profile-lawyer.component';
+import { CaseInformationComponent } from './profiles/lawyers/pages/case-information/case-information.component';
+import { ChooseQueryComponent } from './profiles/lawyers/pages/choose-query/choose-query.component';
+import { ChatroomComponent } from './profiles/lawyers/pages/chatroom/chatroom.component';
+import { VideoCallComponent } from './profiles/lawyers/pages/video-call/video-call.component';
+import { FaceToFaceAppointmentCalendarComponent } from './profiles/lawyers/pages/face-to-face-appointment-calendar/face-to-face-appointment-calendar.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { ProfileLawyerComponent } from './profiles/lawyers/pages/profile-lawyer/
     ProfileComponent,
     ModelComponent,
     ServicesComponent,
-    ProfileLawyerComponent
+    ProfileLawyerComponent,
+    CaseInformationComponent,
+    ChooseQueryComponent,
+    ChatroomComponent,
+    VideoCallComponent,
+    FaceToFaceAppointmentCalendarComponent
   ],
   imports: [
     BrowserModule,
