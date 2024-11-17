@@ -37,6 +37,7 @@ import {provideNativeDateAdapter} from "@angular/material/core";
 import { AuthenticationSectionComponent } from './iam/component/authentication-section/authentication-section.component';
 import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
 import {AuthenticationService} from "./iam/services/authentication.service";
+import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 
 @NgModule({
   declarations: [
