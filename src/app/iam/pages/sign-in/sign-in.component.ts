@@ -12,7 +12,9 @@ export class SignInComponent {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router, private authService: AuthenticationService) { }
+  constructor(private router: Router, private authService: AuthenticationService) {
+    this.authService.signOut();
+  }
 
   signIn() {
     const signInRequest = new SignInRequest(this.username, this.password);
