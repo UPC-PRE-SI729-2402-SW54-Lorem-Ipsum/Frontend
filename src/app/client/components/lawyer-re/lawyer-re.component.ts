@@ -43,3 +43,4 @@ export class LawyerReComponent implements OnInit {
     return this.lawyers[this.currentIndex];
   }
 }
+
