@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil de Abogado - Consulta</title>
-  <link rel="stylesheet" href="choose-query.component.css">
-</head>
 <body>
-
 <div class="main-container">
   <!-- Columna izquierda: Perfil y Consulta -->
   <div class="left-column">
     <div class="profile-container">
       <div class="cover-square"></div>
       <div class="profile-info">
-        <img src="https://via.placeholder.com/100" alt="Foto de Perfil" class="profile-photo">
+        <img src="assets/images/jpc_3.jpg" alt="Foto de Perfil" class="profile-photo">
         <h2 class="username">Pedro Gallego Alcantara<span class="verified">✔</span></h2>
         <div class="profession">
           <i>💼</i>
@@ -29,9 +20,9 @@
       <h4>Consultar Abogado</h4>
       <p>Se ha abierto un caso con el abogado, es hora de empezar la consulta.</p>
       <div class="consultation-buttons">
-        <button class="btn chat-btn">Chat</button>
-        <button class="btn video-btn">Videollamada</button>
-        <button class="btn in-person-btn">Cita Presencial</button>
+        <button class="btn chat-btn" [routerLink]="['/chat']">Chat</button>
+        <button class="btn video-btn" [routerLink]="['/video-call']">Videollamada</button>
+        <button class="btn in-person-btn" [routerLink]="['/face-to-face-appointment']">Cita Presencial</button>
       </div>
     </div>
   </div>
@@ -44,32 +35,48 @@
         <img src="https://via.placeholder.com/40" alt="Foto">
         <div>
           <p>Lucas Aldave</p>
-          <span>Abogado de violencia familiar</span>
+          <span class="profession-span">Abogado de violencia familiar</span>
           <div class="stars">★★★★★</div>
-          <button class="consult-button">Ver Perfil</button>
+          <button class="consult-button" [routerLink]="['/profile-lawyer']">Ver Perfil</button>
         </div>
       </div>
       <div class="recommended-profile">
         <img src="https://via.placeholder.com/40" alt="Foto">
         <div>
           <p>GianPaul Custodio Chavarria</p>
-          <span>Abogado de violencia familiar</span>
+          <span class="profession-span">Abogado de violencia familiar</span>
           <div class="stars">★★★★★</div>
-          <button class="consult-button">Ver Perfil</button>
+          <button class="consult-button" [routerLink]="['/profile-lawyer']">Ver Perfil</button>
         </div>
       </div>
       <div class="recommended-profile">
         <img src="https://via.placeholder.com/40" alt="Foto">
         <div>
           <p>Marcos Chenssen C.</p>
-          <span>Abogado de violencia familiarr</span>
+          <span class="profession-span">Abogado de violencia familiar</span>
           <div class="stars">★★★★★</div>
-          <button class="consult-button">Ver Perfil</button>
+          <button class="consult-button" [routerLink]="['/profile-lawyer']">Ver Perfil</button>
+        </div>
+      </div>
+      <div class="recommended-profile">
+        <img src="https://via.placeholder.com/40" alt="Foto">
+        <div>
+          <p>Christopher David Escobar Cayampi</p>
+          <span class="profession-span">Abogado de violencia familiar</span>
+          <div class="stars">★★★★★</div>
+          <button class="consult-button" [routerLink]="['/profile-lawyer']">Ver Perfil</button>
+        </div>
+      </div>
+      <div class="recommended-profile">
+        <img src="https://via.placeholder.com/40" alt="Foto">
+        <div>
+          <p>Alinet Fernandez Taipe</p>
+          <span class="profession-span">Abogado de violencia familiar</span>
+          <div class="stars">★★★★★</div>
+          <button class="consult-button" [routerLink]="['/profile-lawyer']">Ver Perfil</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 </body>
-</html>

@@ -31,6 +31,7 @@ body {
 .right-column {
   flex: 1;
   max-width: 350px;
+  margin-left: 20px;
 }
 
 /* Contenedor de perfil */
@@ -127,25 +128,68 @@ body {
   border-radius: 10px;
   padding: 20px;
   background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .recommendations-container h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
   margin-bottom: 15px;
 }
 
+/* Perfil recomendado */
 .recommended-profile {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.recommended-profile:last-child {
+  border-bottom: none; /* Eliminar borde en el último perfil */
 }
 
 .recommended-profile img {
   width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 50%;
+}
+
+.recommended-profile div {
+  flex: 1;
+}
+
+.recommended-profile p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.recommended-profile span {
+  font-size: 12px;
+  color: #777;
 }
 
 .stars {
   color: #f39c12;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.consult-button {
+  padding: 8px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #4B4B4B;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consult-button:hover {
+  background-color: #f4f4f4;
 }
