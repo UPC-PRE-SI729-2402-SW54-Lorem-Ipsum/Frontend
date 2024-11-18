@@ -71,7 +71,7 @@ export class AuthenticationService {
           this.signedInUserRole.next(response.role);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.username} with token ${response.token}`);
-          this.router.navigate(['/home']).then();
+          this.router.navigate(['/home-client']).then();
         },
         error: (error) => {
           console.error(`Error while signing in: ${error}`);
