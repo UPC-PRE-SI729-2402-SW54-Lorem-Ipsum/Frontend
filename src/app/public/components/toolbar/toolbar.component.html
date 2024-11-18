@@ -9,7 +9,7 @@
 
   <span class="toolbar-spacer"></span>
 
-  <button mat-button class="btn" [routerLink]="['/']">
+  <button mat-button class="btn" [routerLink]="['/home-client']">
     <mat-icon>home</mat-icon>
     Inicio
   </button>
@@ -23,9 +23,16 @@
     <mat-icon>work</mat-icon>
     Casos
   </button>
-
-  <button mat-button class="btn" [routerLink]="['/']">
+  <button *ngIf="userRole === 'LAWYER'" mat-button class="btn" [routerLink]="['/']">
     <mat-icon>gavel</mat-icon>
-    Para abogados
+    Ver solicitudes
   </button>
+
+  <button *ngIf="userRole === 'CLIENT'" mat-button class="btn" [routerLink]="['/lawyer-search']">
+    <mat-icon>gavel</mat-icon>
+    Buscar abogados
+  </button>
+
+
+
 </mat-toolbar>
