@@ -1,22 +1,36 @@
 <div class="notifications-container">
   <div class="user-profile">
-    <img [src]="user.avatarUrl" alt="User Avatar" class="avatar">
+    <img [src]="user.avatarUrl" alt="User Avatar" class="avatar" />
     <h2>{{ user.name }}</h2>
     <p>{{ user.description }}</p>
   </div>
 
   <div class="notifications-content">
     <div class="filter-buttons">
-      <button mat-button (click)="setFilter('Todo')" [class.active]="filter === 'Todo'">Todo</button>
-      <button mat-button (click)="setFilter('Mis Casos')" [class.active]="filter === 'Mis Casos'">Mis Casos</button>
+      <button
+        mat-button
+        (click)="setFilter('Todo')"
+        [class.active]="filter === 'Todo'"
+      >
+        Todo
+      </button>
+      <button
+        mat-button
+        (click)="setFilter('Mis Casos')"
+        [class.active]="filter === 'Mis Casos'"
+      >
+        Mis Casos
+      </button>
     </div>
 
     <div class="notifications-list">
-      <div *ngFor="let notification of getFilteredNotifications()" class="notification-item">
+      <div
+        *ngFor="let notification of filteredNotifications"
+        class="notification-item"
+      >
         <mat-icon>notifications</mat-icon>
-        <span>{{ notification.message }}</span>
+        <span>{{ notification.title }}: {{ notification.description }}</span>
       </div>
     </div>
   </div>
 </div>
-
