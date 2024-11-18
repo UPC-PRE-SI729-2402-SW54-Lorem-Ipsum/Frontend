@@ -27,9 +27,11 @@ import {
 } from "./consultation/components/view-consultations-made/view-consultations-made.component";
 import {ViewLegalCaseClientComponent} from "./legalcase/pages/view-legal-case-client/view-legal-case-client.component";
 import {CasesComponent} from "./legalcase/pages/cases/cases.component";
+import {LawyerSearchComponent} from "./profile/components/lawyer-search/lawyer-search.component";
 
 
 const routes: Routes = [
+  { path: 'lawyer-search', component: LawyerSearchComponent, canActivate: [authenticationGuard] },
   { path: 'home-client', component: HomeClientComponent, canActivate: [authenticationGuard]},
   { path: 'cases', component: CasesComponent, canActivate: [authenticationGuard] },
   { path: 'view-legal-case-client/:consultationId', component: ViewLegalCaseClientComponent, canActivate: [authenticationGuard] },

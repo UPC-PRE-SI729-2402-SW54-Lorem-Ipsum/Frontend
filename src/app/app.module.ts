@@ -30,7 +30,7 @@ import { ForLawyersComponent } from './iam/pages/for-lawyers/for-lawyers.compone
 import { ChooseRoleComponent } from './iam/pages/choose-role/choose-role.component';
 import { SuccessfulSignUpComponent } from './iam/pages/successful-sign-up/successful-sign-up.component';
 import {NgOptimizedImage} from "@angular/common";
-import {provideNativeDateAdapter} from "@angular/material/core";
+import {MatOption, provideNativeDateAdapter} from "@angular/material/core";
 import { AuthenticationSectionComponent } from './iam/component/authentication-section/authentication-section.component';
 import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
 import {AuthenticationService} from "./iam/services/authentication.service";
@@ -56,6 +56,10 @@ import { ViewLegalCaseClientComponent } from './legalcase/pages/view-legal-case-
 import { ViewLegalCaseLawyerComponent } from './legalcase/pages/view-legal-case-lawyer/view-legal-case-lawyer.component';
 import { ListLegalCasesComponent } from './legalcase/components/list-legal-cases/list-legal-cases.component';
 import { CasesComponent } from './legalcase/pages/cases/cases.component';
+import { LastLegalCasesComponent } from './legalcase/components/last-legal-cases/last-legal-cases.component';
+import { LawyerSearchComponent } from './profile/components/lawyer-search/lawyer-search.component';
+import {MatSelect} from "@angular/material/select";
+import { LawyerProfileComponent } from './profile/pages/lawyer-profile/lawyer-profile.component';
 
 
 @NgModule({
@@ -92,7 +96,10 @@ import { CasesComponent } from './legalcase/pages/cases/cases.component';
     ViewLegalCaseClientComponent,
     ViewLegalCaseLawyerComponent,
     ListLegalCasesComponent,
-    CasesComponent
+    CasesComponent,
+    LastLegalCasesComponent,
+    LawyerSearchComponent,
+    LawyerProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -113,6 +120,8 @@ import { CasesComponent } from './legalcase/pages/cases/cases.component';
     NgOptimizedImage,
     MatDialogContent,
     MatDialogActions,
+    MatSelect,
+    MatOption,
   ],
   providers: [
     provideAnimationsAsync(),
