@@ -1,62 +1,22 @@
-<div class="consultations-container">
-  <div class="user-profile">
-    <img [src]="lawyer.image_profile" alt="User Avatar" class="avatar" />
-    <h2>{{ name }}</h2>
-    <p>{{ lawyer.speciality }}</p>
-  </div>
-
-  <div class="consultations-content">
-    <div class="search-section">
-      <h3>Búsqueda de Consultas</h3>
-      <mat-form-field appearance="outline" class="search-bar">
-        <mat-icon matPrefix>search</mat-icon>
-        <input
-          matInput
-          placeholder="Buscar consultas"
-          [(ngModel)]="searchQuery"
-          (input)="onSearch()"
-        />
-      </mat-form-field>
-    </div>
-
-    <div class="consultations-list">
-      <div
-        class="consultation-item"
-        *ngFor="let consultation of filteredConsultations"
-      >
-        <div
-          class="estado"
-          [ngClass]="{
-            pendiente: consultation.applicationStatus === 'PENDING',
-            aprobado: consultation.applicationStatus === 'APPROVED',
-            rechazado: consultation.applicationStatus === 'REJECTED'
-          }"
-        >
-          {{ consultation.applicationStatus }}
-        </div>
-        <div class="consultation-info">
-          <h4>{{ consultation.title }}</h4>
-          <p>{{ consultation.description }}</p>
-        </div>
-        <div class="actions">
-          <button
-            mat-button
-            color="primary"
-            (click)="approveConsultation(consultation.id)"
-            *ngIf="consultation.applicationStatus === 'PENDING'"
-          >
-            Aprobar
-          </button>
-          <button
-            mat-button
-            color="warn"
-            (click)="rejectConsultation(consultation.id)"
-            *ngIf="consultation.applicationStatus === 'PENDING'"
-          >
-            Rechazar
-          </button>
-        </div>
+<div class="consultas-contenedor">
+  <h2>Solicitudes de Consultas</h2>
+  <p *ngIf="errorMessage" class="mensaje-error">{{ errorMessage }}</p>
+  <div *ngIf="consultations.length > 0; else sinConsultas">
+    <div *ngFor="let consultation of consultations" class="consulta-item">
+      <h3>{{ consultation.title }}</h3>
+      <p>{{ consultation.description }}</p>
+      <p><strong>Cliente:</strong> {{ consultation.clientName }}</p>
+      <div class="acciones">
+        <button (click)="approveConsultation(consultation.id)" class="boton-aprobar">
+          Aceptar
+        </button>
+        <button (click)="rejectConsultation(consultation.id)" class="boton-rechazar">
+          Rechazar
+        </button>
       </div>
     </div>
   </div>
+  <ng-template #sinConsultas>
+    <p>No hay solicitudes de consulta disponibles.</p>
+  </ng-template>
 </div>

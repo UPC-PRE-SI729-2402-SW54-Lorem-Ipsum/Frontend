@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LawyerService } from '../../services/lawyer.service';
-import { Lawyer } from '../../model/lawyer';
+import { ConsultationService } from '../../services/consultation.service';
+import { AuthenticationService } from '../../../iam/services/authentication.service';
 
 @Component({
   selector: 'app-consultations',
@@ -8,26 +8,42 @@ import { Lawyer } from '../../model/lawyer';
   styleUrls: ['./consultations.component.css']
 })
 export class ConsultationsComponent implements OnInit {
-  lawyer: Lawyer = new Lawyer();
-  name: string = '';
-  searchQuery: string = '';
   consultations: any[] = [];
   filteredConsultations: any[] = [];
+  searchQuery: string = '';
+  errorMessage: string = '';
+  lawyerId: number = 0;
 
-  constructor(private lawyerService: LawyerService) {}
+  constructor(
+    private consultationService: ConsultationService,
+    private authService: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
-    this.lawyerService.getLawyerById(2).subscribe((data: Lawyer) => {
-      this.lawyer = data;
-      this.name = `${this.lawyer.name} ${this.lawyer.lastname}`;
+    this.authService.currentUserId.subscribe({
+      next: (id) => {
+        if (id && id > 0) {
+          this.lawyerId = id;
+          this.loadConsultations(this.lawyerId);
+        } else {
+          this.errorMessage = 'No tienes permisos para acceder a estas solicitudes.';
+        }
+      },
+      error: () => {
+        this.errorMessage = 'Hubo un problema al obtener tu información de usuario.';
+      }
     });
-    this.loadConsultations();
   }
 
-  loadConsultations(): void {
-    this.lawyerService.getConsultationsByLawyerId(2).subscribe((data: any[]) => {
-      this.consultations = data;
-      this.filteredConsultations = data;
+  loadConsultations(lawyerId: number): void {
+    this.consultationService.getConsultationsByLawyerId(lawyerId).subscribe({
+      next: (data) => {
+        this.consultations = data;
+        this.filteredConsultations = data;
+      },
+      error: () => {
+        this.errorMessage = 'Hubo un error al cargar las solicitudes de consulta.';
+      }
     });
   }
 
@@ -37,7 +53,6 @@ export class ConsultationsComponent implements OnInit {
       this.filteredConsultations = this.consultations;
       return;
     }
-
     this.filteredConsultations = this.consultations.filter(
       (consultation) =>
         consultation.title.toLowerCase().includes(trimmedQuery) ||
@@ -46,26 +61,26 @@ export class ConsultationsComponent implements OnInit {
   }
 
   approveConsultation(consultationId: number): void {
-    this.lawyerService
-      .updateConsultationStatus(consultationId, 'APPROVED')
-      .subscribe({
-        next: () => {
-          alert('Consulta aprobada con éxito.');
-          this.loadConsultations();
-        },
-        error: (err) => console.error('Error al aprobar consulta:', err)
-      });
+    this.consultationService.approveConsultation(consultationId).subscribe({
+      next: () => {
+        alert('Consulta aprobada con éxito.');
+        this.loadConsultations(this.lawyerId);
+      },
+      error: () => {
+        this.errorMessage = 'Error al aprobar la solicitud.';
+      }
+    });
   }
 
   rejectConsultation(consultationId: number): void {
-    this.lawyerService
-      .updateConsultationStatus(consultationId, 'REJECTED')
-      .subscribe({
-        next: () => {
-          alert('Consulta rechazada con éxito.');
-          this.loadConsultations();
-        },
-        error: (err) => console.error('Error al rechazar consulta:', err)
-      });
+    this.consultationService.rejectConsultation(consultationId).subscribe({
+      next: () => {
+        alert('Consulta rechazada con éxito.');
+        this.loadConsultations(this.lawyerId);
+      },
+      error: () => {
+        this.errorMessage = 'Error al rechazar la solicitud.';
+      }
+    });
   }
 }
