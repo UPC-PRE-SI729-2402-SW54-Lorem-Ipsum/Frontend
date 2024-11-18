@@ -13,6 +13,10 @@ import {
 } from "./iam/pages/add-specialization-and-price/add-specialization-and-price.component";
 import {SuccessfulSignUpComponent} from "./iam/pages/successful-sign-up/successful-sign-up.component";
 import {authenticationGuard} from "./iam/services/authentication.guard";
+import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
+import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
+import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
+import {PaymentManagementComponent} from "./legalcase/pages/payment-management/payment-management.component";
 import {HomeClientComponent} from "./profile/pages/home-client/home-client.component";
 import {
   LawyerProfileClientviewComponent
@@ -22,6 +26,7 @@ import {MakeConsultationComponent} from "./consultation/components/make-consulta
 import {
   ViewConsultationsMadeComponent
 } from "./consultation/components/view-consultations-made/view-consultations-made.component";
+
 
 const routes: Routes = [
   {
@@ -41,6 +46,11 @@ const routes: Routes = [
   { path: 'successful', component: SuccessfulSignUpComponent },
   { path: 'sign-up-lawyer', component: SignUpLawyerComponent },
   { path: 'sign-up-client', component: SignUpClientComponent },
+  { path: 'review-legal-case', component: ReviewLegalCaseComponent },
+  { path: 'view-legal-case', component: ViewLegalCaseComponent },
+  { path: 'documents', component: DocumentManagementComponent },
+  { path: 'payments', component: PaymentManagementComponent },
+
 
   { path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }

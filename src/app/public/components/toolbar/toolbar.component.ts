@@ -3,6 +3,7 @@ import { AuthenticationService } from '../../../iam/services/authentication.serv
 
 @Component({
   selector: 'app-toolbar',
+
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
