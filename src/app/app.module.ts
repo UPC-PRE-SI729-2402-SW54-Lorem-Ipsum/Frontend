@@ -39,6 +39,8 @@ import {AuthenticationInterceptor} from "./iam/services/authentication.intercept
 import {AuthenticationService} from "./iam/services/authentication.service";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 import { LawyersProfileComponent } from './profile/lawyers-profiles/component/lawyers-profile/lawyers-profile.component';
+import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
+
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { LawyersProfileComponent } from './profile/lawyers-profiles/component/la
     ChooseRoleComponent,
     SuccessfulSignUpComponent,
     AuthenticationSectionComponent,
-    LawyersProfileComponent
+    LawyersProfileComponent,
+    ReviewLegalCaseComponent
 
   ],
   imports: [
