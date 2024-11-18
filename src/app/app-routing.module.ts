@@ -17,6 +17,7 @@ import {SuccessfulSignUpComponent} from "./iam/pages/successful-sign-up/successf
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
 import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
+import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
 
 
 const routes: Routes = [
@@ -36,6 +37,8 @@ const routes: Routes = [
   { path: 'sign-up-client', component: SignUpClientComponent },
   { path: 'review-legal-case', component: ReviewLegalCaseComponent },
   { path: 'view-legal-case', component: ViewLegalCaseComponent },
+  { path: 'documents', component: DocumentManagementComponent },
+
 
   { path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
