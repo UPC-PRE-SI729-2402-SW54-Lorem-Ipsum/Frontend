@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class NotificationsService {
+export class NotificationService {
   private baseUrl = 'http://localhost:8080/api/v1/notification';
 
   constructor(private http: HttpClient) {}
@@ -14,7 +14,7 @@ export class NotificationsService {
     return this.http.get<any[]>(`${this.baseUrl}/client/${clientId}`);
   }
 
-  getNotificationsByConsultationId(consultationId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/legal-case/${consultationId}`);
+  getNotificationsByCaseId(caseId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/legal-case/${caseId}`);
   }
 }

@@ -1,10 +1,4 @@
 <div class="notifications-container">
-  <div class="user-profile">
-    <img [src]="user.avatarUrl" alt="User Avatar" class="avatar" />
-    <h2>{{ user.name }}</h2>
-    <p>{{ user.description }}</p>
-  </div>
-
   <div class="notifications-content">
     <div class="filter-buttons">
       <button
@@ -23,14 +17,18 @@
       </button>
     </div>
 
-    <div class="notifications-list">
+    <div class="notifications-list" *ngIf="getFilteredNotifications().length > 0; else noNotifications">
       <div
-        *ngFor="let notification of filteredNotifications"
+        *ngFor="let notification of getFilteredNotifications()"
         class="notification-item"
       >
         <mat-icon>notifications</mat-icon>
         <span>{{ notification.title }}: {{ notification.description }}</span>
       </div>
     </div>
+
+    <ng-template #noNotifications>
+      <p>No hay notificaciones disponibles.</p>
+    </ng-template>
   </div>
 </div>

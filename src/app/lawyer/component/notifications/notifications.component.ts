@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationsService } from '../../services/notifications.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { NotificationService } from '../../services/notifications.service';
+import { AuthenticationService } from '../../../iam/services/authentication.service';
 
 @Component({
   selector: 'app-notifications',
@@ -8,58 +8,50 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./notifications.component.css'],
 })
 export class NotificationsComponent implements OnInit {
-  user = {
-    name: 'John Doe',
-    description: 'Abogado especializado en derecho corporativo y comercial.',
-    avatarUrl: 'https://via.placeholder.com/150',
-  };
-
   notifications: any[] = [];
-  filteredNotifications: any[] = [];
   filter: string = 'Todo';
 
-  constructor(private notificationsService: NotificationsService) {}
+  constructor(
+    private notificationService: NotificationService,
+    private authService: AuthenticationService
+  ) {}
 
-  ngOnInit() {
-    const clientId = 1;
-    const consultationId = 1;
-    this.loadNotifications(clientId, consultationId);
+  ngOnInit(): void {
+    this.authService.currentUserId.subscribe({
+      next: (userId) => {
+        if (userId && userId > 0) {
+          this.loadNotifications(userId);
+        } else {
+          console.error('Invalid user ID. Cannot load notifications.');
+        }
+      },
+      error: (err) => {
+        console.error('Error fetching user ID:', err);
+      },
+    });
   }
 
-  loadNotifications(clientId: number, consultationId: number) {
-    this.notificationsService.getNotificationsByClientId(clientId).subscribe({
-      next: (data: any[]) => {
+  loadNotifications(userId: number): void {
+    this.notificationService.getNotificationsByClientId(userId).subscribe({
+      next: (data) => {
         this.notifications = data;
-        this.applyFilter();
+        console.log('Loaded notifications:', data);
       },
-      error: (err: HttpErrorResponse) => {
-        console.error('Error loading client notifications:', err);
-      },
-    });
-
-    this.notificationsService.getNotificationsByConsultationId(consultationId).subscribe({
-      next: (data: any[]) => {
-        this.notifications = [...this.notifications, ...data];
-        this.applyFilter();
-      },
-      error: (err: HttpErrorResponse) => {
-        console.error('Error loading case notifications:', err);
+      error: (err) => {
+        console.error('Error loading notifications:', err);
       },
     });
   }
 
-  setFilter(filter: string) {
+  setFilter(filter: string): void {
     this.filter = filter;
-    this.applyFilter();
   }
 
-  applyFilter() {
-    if (this.filter === 'Todo') {
-      this.filteredNotifications = this.notifications;
-    } else if (this.filter === 'Mis Casos') {
-      this.filteredNotifications = this.notifications.filter((notification) =>
-        notification.consultationId
-      );
-    }
+  getFilteredNotifications(): any[] {
+    return this.notifications.filter(
+      (notification) =>
+        notification.type === this.filter || this.filter === 'Todo'
+    );
   }
 }
+
