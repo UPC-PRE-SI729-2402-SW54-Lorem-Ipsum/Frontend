@@ -16,14 +16,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
-import { HomeComponent } from './client/pages/home/home.component';
-import { LawyerService } from './lawyer/services/lawyer.service';
-import { LawyerReComponent } from './client/components/lawyer-re/lawyer-re.component';
-import { CurrentUserComponent } from './client/components/current-user/current-user.component';
+import { LawyerService } from './profile/services/lawyer.service';
+import { CurrentUserComponent } from './profile/components/current-user/current-user.component';
 import { FooterComponent } from './public/components/footer/footer.component';
 import { ToolbarComponent } from './public/components/toolbar/toolbar.component';
-import { CasesComponent } from './lawyer/component/cases/cases.component';
-import { NotificationsComponent } from './lawyer/component/notifications/notifications.component';
+import { NotificationsComponent } from './followup/components/notifications/notifications.component';
 import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './iam/pages/forgot-password/forgot-password.component';
 import { SignUpLawyerComponent } from './iam/pages/sign-up-lawyer/sign-up-lawyer.component';
@@ -38,18 +35,22 @@ import { AuthenticationSectionComponent } from './iam/component/authentication-s
 import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
 import {AuthenticationService} from "./iam/services/authentication.service";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
+import { HomeClientComponent } from './profile/pages/home-client/home-client.component';
+import { LawyerListComponent } from './profile/components/lawyer-list/lawyer-list.component';
+import {ClientService} from "./profile/services/client.service";
+import { LawyerProfileClientviewComponent } from './profile/components/lawyer-profile-clientview/lawyer-profile-clientview.component';
+import { MakeConsultationComponent } from './consultation/components/make-consultation/make-consultation.component';
+import {ConsultationService} from "./consultation/services/consultation.service";
+import { ViewConsultationsMadeComponent } from './consultation/components/view-consultations-made/view-consultations-made.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    HomeComponent,
-    LawyerReComponent,
     CurrentUserComponent,
     FooterComponent,
     ToolbarComponent,
     NotificationsComponent,
-    CasesComponent,
     SignInComponent,
     ForgotPasswordComponent,
     SignUpLawyerComponent,
@@ -58,7 +59,12 @@ import {provideAnimationsAsync} from "@angular/platform-browser/animations/async
     ForLawyersComponent,
     ChooseRoleComponent,
     SuccessfulSignUpComponent,
-    AuthenticationSectionComponent
+    AuthenticationSectionComponent,
+    HomeClientComponent,
+    LawyerListComponent,
+    LawyerProfileClientviewComponent,
+    MakeConsultationComponent,
+    ViewConsultationsMadeComponent
 
   ],
   imports: [
@@ -88,6 +94,8 @@ import {provideAnimationsAsync} from "@angular/platform-browser/animations/async
       multi: true
     },
     LawyerService,
+    ClientService,
+    ConsultationService,
     AuthenticationService
   ],
   bootstrap: [AppComponent],
