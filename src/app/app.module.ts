@@ -50,6 +50,7 @@ import { ConfirmCloseCaseComponent } from './legalcase/component/confirm-close-c
 import { AddPaymentComponent } from './legalcase/component/add-payment/add-payment.component';
 import { PaymentTableComponent } from './legalcase/component/payment-table/payment-table.component';
 import { PaymentManagementComponent } from './legalcase/pages/payment-management/payment-management.component';
+import { AddDocumentComponent } from './legalcase/components/add-document/add-document.component';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { PaymentManagementComponent } from './legalcase/pages/payment-management
     ConfirmCloseCaseComponent,
     AddPaymentComponent,
     PaymentTableComponent,
-    PaymentManagementComponent
+    PaymentManagementComponent,
+    AddDocumentComponent
 
   ],
   imports: [

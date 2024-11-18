@@ -18,6 +18,7 @@ import {authenticationGuard} from "./iam/services/authentication.guard";
 import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
 import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
+import {PaymentManagementComponent} from "./legalcase/pages/payment-management/payment-management.component";
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'review-legal-case', component: ReviewLegalCaseComponent },
   { path: 'view-legal-case', component: ViewLegalCaseComponent },
   { path: 'documents', component: DocumentManagementComponent },
+  { path: 'payments', component: PaymentManagementComponent },
 
 
   { path: '', redirectTo: 'sign-in', pathMatch: 'full'},

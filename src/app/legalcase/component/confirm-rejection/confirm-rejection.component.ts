@@ -9,17 +9,6 @@ import {Router} from "@angular/router";
   styleUrl: './confirm-rejection.component.css'
 })
 export class ConfirmRejectionComponent {
- /* @Output() response = new EventEmitter<boolean>();
-
-  accept() {
-    this.response.emit(true);
-
-  }
-
-  cancel() {
-    this.response.emit(false);
-  }*/
-
   constructor(private dialogRef: MatDialogRef<ConfirmRejectionComponent>,
   private router: Router) {}
 
