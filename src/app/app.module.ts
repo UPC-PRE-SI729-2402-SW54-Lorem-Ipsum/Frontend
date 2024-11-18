@@ -45,6 +45,7 @@ import {DocumentManagementComponent} from "./legalcase/pages/document-management
 import {ConfirmRejectionComponent} from "./legalcase/component/confirm-rejection/confirm-rejection.component";
 import {AddAndEditDocumentComponent} from "./legalcase/component/add-and-edit-document/add-and-edit-document.component";
 import {DocumentTableComponent} from "./legalcase/component/document-table/document-table.component";
+import {MatDialogActions, MatDialogContent} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -93,6 +94,8 @@ import {DocumentTableComponent} from "./legalcase/component/document-table/docum
     MatCardModule,
     MatGridListModule,
     NgOptimizedImage,
+    MatDialogContent,
+    MatDialogActions,
   ],
   providers: [
     provideAnimationsAsync(),
