@@ -60,6 +60,11 @@ import { LastLegalCasesComponent } from './legalcase/components/last-legal-cases
 import { LawyerSearchComponent } from './profile/components/lawyer-search/lawyer-search.component';
 import {MatSelect} from "@angular/material/select";
 import { LawyerProfileComponent } from './profile/pages/lawyer-profile/lawyer-profile.component';
+import {ChatroomComponent} from "./comunication/chatroom/chatroom.component";
+import {
+  FaceToFaceAppointmentCalendarComponent
+} from "./comunication/face-to-face-appointment-calendar/face-to-face-appointment-calendar.component";
+import {VideoCallComponent} from "./comunication/video-call/video-call.component";
 
 
 @NgModule({
@@ -99,7 +104,10 @@ import { LawyerProfileComponent } from './profile/pages/lawyer-profile/lawyer-pr
     CasesComponent,
     LastLegalCasesComponent,
     LawyerSearchComponent,
-    LawyerProfileComponent
+    LawyerProfileComponent,
+    ChatroomComponent,
+    FaceToFaceAppointmentCalendarComponent,
+    VideoCallComponent
   ],
   imports: [
     BrowserModule,
