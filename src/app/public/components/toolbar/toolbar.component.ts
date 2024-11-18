@@ -9,6 +9,7 @@ import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-toolbar',
+
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
 })
