@@ -40,6 +40,11 @@ import {AuthenticationService} from "./iam/services/authentication.service";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 import { LawyersProfileComponent } from './profile/lawyers-profiles/component/lawyers-profile/lawyers-profile.component';
 import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
+import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
+import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
+import {ConfirmRejectionComponent} from "./legalcase/component/confirm-rejection/confirm-rejection.component";
+import {AddAndEditDocumentComponent} from "./legalcase/component/add-and-edit-document/add-and-edit-document.component";
+import {DocumentTableComponent} from "./legalcase/component/document-table/document-table.component";
 
 
 @NgModule({
@@ -63,7 +68,12 @@ import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/revi
     SuccessfulSignUpComponent,
     AuthenticationSectionComponent,
     LawyersProfileComponent,
-    ReviewLegalCaseComponent
+    ReviewLegalCaseComponent,
+    ViewLegalCaseComponent,
+    DocumentManagementComponent,
+    ConfirmRejectionComponent,
+    AddAndEditDocumentComponent,
+    DocumentTableComponent
 
   ],
   imports: [
