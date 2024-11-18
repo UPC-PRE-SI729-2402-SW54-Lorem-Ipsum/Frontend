@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatButton} from "@angular/material/button";
-import {RouterLink} from "@angular/router";
-import {MatFormField} from "@angular/material/form-field";
-import {MatInput} from "@angular/material/input";
-import {MatIcon} from "@angular/material/icon";
-import {NgOptimizedImage} from "@angular/common";
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../../iam/services/authentication.service';
 
 @Component({
   selector: 'app-toolbar',
 
   templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.css'
+  styleUrls: ['./toolbar.component.css']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+  userRole: string = '';
 
+  constructor(private authService: AuthenticationService) {}
+
+  ngOnInit() {
+    this.authService.currentUserRole.subscribe((role) => {
+      const match = role.match(/name=(\w+)/);
+      if (match) {
+        this.userRole = match[1];
+      }
+      console.log(this.userRole);
+    });
+  }
 }

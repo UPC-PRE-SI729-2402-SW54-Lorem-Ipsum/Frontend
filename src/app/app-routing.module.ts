@@ -1,9 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
 import {NgModule} from "@angular/core";
-import {HomeComponent} from "./client/pages/home/home.component";
-import {NotificationsComponent} from "./lawyer/component/notifications/notifications.component";
-import {CasesComponent} from "./lawyer/component/cases/cases.component";
+import {NotificationsComponent} from "./followup/components/notifications/notifications.component";
 import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
 import {ForgotPasswordComponent} from "./iam/pages/forgot-password/forgot-password.component";
 import {SignUpLawyerComponent} from "./iam/pages/sign-up-lawyer/sign-up-lawyer.component";
@@ -19,15 +17,27 @@ import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/revi
 import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
 import {PaymentManagementComponent} from "./legalcase/pages/payment-management/payment-management.component";
+import {HomeClientComponent} from "./profile/pages/home-client/home-client.component";
+import {
+  LawyerProfileClientviewComponent
+} from "./profile/components/lawyer-profile-clientview/lawyer-profile-clientview.component";
+import {LawyerListComponent} from "./profile/components/lawyer-list/lawyer-list.component";
+import {MakeConsultationComponent} from "./consultation/components/make-consultation/make-consultation.component";
+import {
+  ViewConsultationsMadeComponent
+} from "./consultation/components/view-consultations-made/view-consultations-made.component";
 
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent, canActivate: [authenticationGuard]
+    path: 'home-client',
+    component: HomeClientComponent, canActivate: [authenticationGuard]
   },
+  { path: 'view-consultations-made/:lawyerId', component: ViewConsultationsMadeComponent, canActivate: [authenticationGuard] },
+  { path: 'make-consultation/:lawyerId', component: MakeConsultationComponent, canActivate: [authenticationGuard] },
+  { path: 'lawyer-list', component: LawyerListComponent, canActivate: [authenticationGuard] },
+  { path: 'lawyer-profile/:lawyerId', component: LawyerProfileClientviewComponent, canActivate: [authenticationGuard] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [authenticationGuard]},
-  { path:'cases', component: CasesComponent, canActivate: [authenticationGuard]},
   { path: 'sign-in', component: SignInComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'choose-role', component: ChooseRoleComponent },

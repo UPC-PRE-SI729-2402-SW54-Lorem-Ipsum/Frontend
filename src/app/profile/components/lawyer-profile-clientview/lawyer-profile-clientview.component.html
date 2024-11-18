@@ -1,0 +1,12 @@
+<div class="profile-container">
+  <div class="profile-header"></div>
+  <div class="profile-content">
+    <div class="profile-left">
+      <img *ngIf="lawyer" [src]="lawyer.profile.image_url" [alt]="lawyer.profile.name.firstName" class="profile-image">
+      <h2 *ngIf="lawyer">{{ lawyer.profile.name.firstName }} {{ lawyer.profile.name.lastName }}</h2>
+      <p *ngIf="lawyer">{{ lawyer.lawyerTypes.join(', ') }}</p>
+      <button class="consult-button" [routerLink]="['/make-consultation', lawyer?.id]">Consulta</button>
+      <button class="view-consultations-button" [routerLink]="['/view-consultations-made', lawyer?.id]">View Consultations</button>
+    </div>
+  </div>
+</div>
