@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {LegalCase} from "../../model/legal-case.entity";
 import {MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 

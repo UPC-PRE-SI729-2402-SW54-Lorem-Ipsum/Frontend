@@ -1,45 +1,41 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {catchError, Observable, retry, throwError} from "rxjs";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { SendDocument } from '../model/send-document';
+import { environment } from '../../../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentsService {
+  private apiUrl = `${environment.serverBasePath}/documents`;
 
-  private basePath = 'http://localhost:8080';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-          `Backend returned code ${error.status}, ` +
-          `body was: ${error.error}`);
-    }
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+  addDocumentItem(document: SendDocument): Observable<any> {
+    return this.http.post<any>(this.apiUrl, JSON.stringify(document), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  getAllDocuments() {
-    return this.http.get<Document[]>(`${this.basePath}/documents`);
+  getDocumentItemById(documentId: number): Observable<SendDocument> {
+    return this.http.get<SendDocument>(`${this.apiUrl}/${documentId}`)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  createDocument(document: Document) {
-    return this.http.post<Document>(`${this.basePath}/documents`, document)
-        .pipe(retry(2), catchError(this.handleError));
+  getAllDocumentItemsByLegalCaseId(legalCaseId: number): Observable<SendDocument[]> {
+    return this.http.get<SendDocument[]>(`${this.apiUrl}?legalCaseId=${legalCaseId}`)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  changeDocumentStatus(documentId: number, status: string) {
-    return this.http.patch<Document>(`${this.basePath}/documents/status/${documentId}`, {status})
-        .pipe(retry(2), catchError(this.handleError));
+  private handleError(error: any) {
+    console.error('An error occurred', error);
+    return throwError(() => new Error('Something went wrong; please try again later.'));
   }
-
-  getDocumentById(documentId: number): Observable<Document> {
-    return this.http.get<Document>(`${this.basePath}/documents/${documentId}`)
-        .pipe(retry(2), catchError(this.handleError));
-  }
-
-
 }

@@ -1,49 +1,30 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {LegalCase} from "../model/legal-case.entity";
-import {catchError, retry, throwError} from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { LegalCase } from '../model/legal-case';
+import { environment } from '../../../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LegalCaseService {
-  private basePath = 'http://localhost:8080';
+  private apiUrl = `${environment.serverBasePath}/legal_cases`;
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+  getLegalCaseById(legalCaseId: number): Observable<LegalCase> {
+    return this.http.get<LegalCase>(`${this.apiUrl}/${legalCaseId}`);
   }
 
-  getAllLegalCases() {
-    return this.http.get<LegalCase[]>(`${this.basePath}/legal_cases`);
+  getAllLegalCases(): Observable<LegalCase[]> {
+    return this.http.get<LegalCase[]>(this.apiUrl);
   }
 
-  createLegalCase(legalCase: LegalCase) {
-    return this.http.post<LegalCase>(`${this.basePath}/legal_cases`, legalCase)
-      .pipe(retry(2), catchError(this.handleError));
+  closeLegalCase(legalCaseId: number): Observable<void> {
+    return this.http.patch<void>(`${this.apiUrl}/close/${legalCaseId}`, {});
   }
 
-  getLegalCaseById(legalCaseId: number) {
-    return this.http.get<LegalCase>(`${this.basePath}/legal_cases/${legalCaseId}`)
-      .pipe(retry(2), catchError(this.handleError));
+  getLegalCaseByConsultationId(consultationId: number): Observable<LegalCase> {
+    return this.http.get<LegalCase>(`${this.apiUrl}/consultation/${consultationId}`);
   }
-
-  getLegalCaseByConsultationId(consultationId: number) {
-    return this.http.get<LegalCase>(`${this.basePath}/legal_cases/consultation/${consultationId}`)
-      .pipe(retry(2), catchError(this.handleError));
-  }
-
-  closeLegalCase(legalCaseId: number) {
-    return this.http.patch<LegalCase>(`${this.basePath}/legal_cases/close/${legalCaseId}`, {})
-      .pipe(retry(2), catchError(this.handleError));
-  }
-
 }

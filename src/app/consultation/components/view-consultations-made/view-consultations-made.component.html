@@ -3,6 +3,9 @@
   <ul>
     <li *ngFor="let consultation of consultations">
       Consultation ID: {{ consultation.id }} - Status: {{ consultation.applicationStatus }}
+      <button *ngIf="consultation.applicationStatus === 'APPROVED'" (click)="viewLegalCase(consultation.id)">
+        View Legal Case
+      </button>
     </li>
   </ul>
 </div>

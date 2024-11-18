@@ -2,7 +2,6 @@ import {Component, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {AddDocumentComponent} from "../add-document/add-document.component";
 import {AddPaymentComponent} from "../add-payment/add-payment.component";
 
 @Component({

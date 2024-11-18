@@ -1,18 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {LegalCase} from "../../model/legal-case.entity";
+import {LegalCase} from "../../model/legal-case";
 import {LegalCaseService} from "../../services/legal-case.service";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {ConfirmRejectionComponent} from "../../component/confirm-rejection/confirm-rejection.component";
-import {ConfirmCloseCaseComponent} from "../../component/confirm-close-case/confirm-close-case.component";
+import {ConfirmCloseCaseComponent} from "../../components/confirm-close-case/confirm-close-case.component";
 
 @Component({
-  selector: 'app-view-legal-case',
-  templateUrl: './view-legal-case.component.html',
-  styleUrl: './view-legal-case.component.css'
+  selector: 'app-view-legal-case-lawyer',
+  templateUrl: './view-legal-case-lawyer.component.html',
+  styleUrl: './view-legal-case-lawyer.component.css'
 })
-export class ViewLegalCaseComponent implements OnInit {
-  legalCase: LegalCase = new LegalCase();
+export class ViewLegalCaseLawyerComponent  implements OnInit {
+  legalCase: LegalCase | null = null;
   showPopup = false;
 
   constructor(private legalCaseService: LegalCaseService, private router: Router, private dialog: MatDialog) {}
@@ -25,7 +24,7 @@ export class ViewLegalCaseComponent implements OnInit {
   }
 
   goToDocuments() {
-   /* this.router.navigate(['/legal-cases', this.legalCase.id, 'documents']); */
+    /* this.router.navigate(['/legal-cases', this.legalCase.id, 'documents']); */
     this.router.navigate(['/documents']);
   }
 
@@ -61,3 +60,4 @@ export class ViewLegalCaseComponent implements OnInit {
   }
 
 }
+

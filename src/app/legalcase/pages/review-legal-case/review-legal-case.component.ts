@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {LegalCase} from "../../model/legal-case.entity";
 import {LegalCaseService} from "../../services/legal-case.service";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {ConfirmRejectionComponent} from "../../component/confirm-rejection/confirm-rejection.component";
+import {ConfirmRejectionComponent} from "../../components/confirm-rejection/confirm-rejection.component";
+import {LegalCase} from "../../model/legal-case";
 
 @Component({
   selector: 'app-review-legal-case',
@@ -11,7 +11,7 @@ import {ConfirmRejectionComponent} from "../../component/confirm-rejection/confi
   styleUrl: './review-legal-case.component.css'
 })
 export class ReviewLegalCaseComponent implements OnInit {
-  legalCase: LegalCase = new LegalCase();
+  legalCase: LegalCase | null = null;
   showPopup = false;
 
   constructor(private legalCaseService: LegalCaseService, private router: Router, private dialog: MatDialog) {}

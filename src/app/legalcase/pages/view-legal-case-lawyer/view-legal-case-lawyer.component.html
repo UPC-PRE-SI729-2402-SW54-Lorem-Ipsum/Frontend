@@ -1,15 +1,15 @@
 <div class="view-case">
   <div class="case-block">
     <div class="case-header">
-      <p>CASO {{ legalCase.id }}</p>
+      <p>CASO {{ legalCase?.id }}</p>
     </div>
 
     <div class="case-content">
 
       <div class="case-description">
         <p>
-          <strong>Asunto:</strong> {{ legalCase.title }} <br>
-          <strong>Mensaje:</strong> {{ legalCase.description }}
+          <strong>Asunto:</strong> {{ legalCase?.title }} <br>
+          <strong>Mensaje:</strong> {{ legalCase?.description }}
         </p>
       </div>
       <div class="actions">
@@ -27,8 +27,7 @@
     </div>
 
     <div class="close-case">
-    <button class="close" (click)="openCloseCasePopup('close')">Cerrar Caso</button>
+      <button class="close" (click)="openCloseCasePopup('close')">Cerrar Caso</button>
     </div>
   </div>
 </div>
-

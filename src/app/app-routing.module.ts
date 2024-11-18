@@ -14,7 +14,6 @@ import {
 import {SuccessfulSignUpComponent} from "./iam/pages/successful-sign-up/successful-sign-up.component";
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
-import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
 import {PaymentManagementComponent} from "./legalcase/pages/payment-management/payment-management.component";
 import {HomeClientComponent} from "./profile/pages/home-client/home-client.component";
@@ -26,13 +25,14 @@ import {MakeConsultationComponent} from "./consultation/components/make-consulta
 import {
   ViewConsultationsMadeComponent
 } from "./consultation/components/view-consultations-made/view-consultations-made.component";
+import {ViewLegalCaseClientComponent} from "./legalcase/pages/view-legal-case-client/view-legal-case-client.component";
+import {CasesComponent} from "./legalcase/pages/cases/cases.component";
 
 
 const routes: Routes = [
-  {
-    path: 'home-client',
-    component: HomeClientComponent, canActivate: [authenticationGuard]
-  },
+  { path: 'home-client', component: HomeClientComponent, canActivate: [authenticationGuard]},
+  { path: 'cases', component: CasesComponent, canActivate: [authenticationGuard] },
+  { path: 'view-legal-case-client/:consultationId', component: ViewLegalCaseClientComponent, canActivate: [authenticationGuard] },
   { path: 'view-consultations-made/:lawyerId', component: ViewConsultationsMadeComponent, canActivate: [authenticationGuard] },
   { path: 'make-consultation/:lawyerId', component: MakeConsultationComponent, canActivate: [authenticationGuard] },
   { path: 'lawyer-list', component: LawyerListComponent, canActivate: [authenticationGuard] },
@@ -46,10 +46,9 @@ const routes: Routes = [
   { path: 'successful', component: SuccessfulSignUpComponent },
   { path: 'sign-up-lawyer', component: SignUpLawyerComponent },
   { path: 'sign-up-client', component: SignUpClientComponent },
-  { path: 'review-legal-case', component: ReviewLegalCaseComponent },
-  { path: 'view-legal-case', component: ViewLegalCaseComponent },
-  { path: 'documents', component: DocumentManagementComponent },
-  { path: 'payments', component: PaymentManagementComponent },
+  { path: 'review-legal-case', component: ReviewLegalCaseComponent, canActivate: [authenticationGuard] },
+  { path: 'documents', component: DocumentManagementComponent, canActivate: [authenticationGuard] },
+  { path: 'payments', component: PaymentManagementComponent, canActivate: [authenticationGuard] },
 
 
   { path: '', redirectTo: 'sign-in', pathMatch: 'full'},

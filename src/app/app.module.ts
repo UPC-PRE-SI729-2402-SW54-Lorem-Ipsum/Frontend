@@ -35,18 +35,16 @@ import { AuthenticationSectionComponent } from './iam/component/authentication-s
 import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
 import {AuthenticationService} from "./iam/services/authentication.service";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
-import { LawyersProfileComponent } from './profile/lawyers-profiles/component/lawyers-profile/lawyers-profile.component';
 import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
-import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
-import {ConfirmRejectionComponent} from "./legalcase/component/confirm-rejection/confirm-rejection.component";
-import {DocumentTableComponent} from "./legalcase/component/document-table/document-table.component";
+import {ConfirmRejectionComponent} from "./legalcase/components/confirm-rejection/confirm-rejection.component";
+import {DocumentTableComponent} from "./legalcase/components/document-table/document-table.component";
 import {MatDialogActions, MatDialogContent} from "@angular/material/dialog";
-import { ConfirmCloseCaseComponent } from './legalcase/component/confirm-close-case/confirm-close-case.component';
-import { AddPaymentComponent } from './legalcase/component/add-payment/add-payment.component';
-import { PaymentTableComponent } from './legalcase/component/payment-table/payment-table.component';
+import { ConfirmCloseCaseComponent } from './legalcase/components/confirm-close-case/confirm-close-case.component';
+import { AddPaymentComponent } from './legalcase/components/add-payment/add-payment.component';
+import { PaymentTableComponent } from './legalcase/components/payment-table/payment-table.component';
 import { PaymentManagementComponent } from './legalcase/pages/payment-management/payment-management.component';
-import { AddDocumentComponent } from './legalcase/component/add-document/add-document.component';
+import { AddDocumentComponent } from './legalcase/components/add-document/add-document.component';
 import { HomeClientComponent } from './profile/pages/home-client/home-client.component';
 import { LawyerListComponent } from './profile/components/lawyer-list/lawyer-list.component';
 import {ClientService} from "./profile/services/client.service";
@@ -54,6 +52,10 @@ import { LawyerProfileClientviewComponent } from './profile/components/lawyer-pr
 import { MakeConsultationComponent } from './consultation/components/make-consultation/make-consultation.component';
 import {ConsultationService} from "./consultation/services/consultation.service";
 import { ViewConsultationsMadeComponent } from './consultation/components/view-consultations-made/view-consultations-made.component';
+import { ViewLegalCaseClientComponent } from './legalcase/pages/view-legal-case-client/view-legal-case-client.component';
+import { ViewLegalCaseLawyerComponent } from './legalcase/pages/view-legal-case-lawyer/view-legal-case-lawyer.component';
+import { ListLegalCasesComponent } from './legalcase/components/list-legal-cases/list-legal-cases.component';
+import { CasesComponent } from './legalcase/pages/cases/cases.component';
 
 
 @NgModule({
@@ -73,9 +75,7 @@ import { ViewConsultationsMadeComponent } from './consultation/components/view-c
     ChooseRoleComponent,
     SuccessfulSignUpComponent,
     AuthenticationSectionComponent,
-    LawyersProfileComponent,
     ReviewLegalCaseComponent,
-    ViewLegalCaseComponent,
     DocumentManagementComponent,
     ConfirmRejectionComponent,
     DocumentTableComponent,
@@ -83,13 +83,16 @@ import { ViewConsultationsMadeComponent } from './consultation/components/view-c
     AddPaymentComponent,
     PaymentTableComponent,
     PaymentManagementComponent,
-    AddDocumentComponent
+    AddDocumentComponent,
     HomeClientComponent,
     LawyerListComponent,
     LawyerProfileClientviewComponent,
     MakeConsultationComponent,
-    ViewConsultationsMadeComponent
-
+    ViewConsultationsMadeComponent,
+    ViewLegalCaseClientComponent,
+    ViewLegalCaseLawyerComponent,
+    ListLegalCasesComponent,
+    CasesComponent
   ],
   imports: [
     BrowserModule,

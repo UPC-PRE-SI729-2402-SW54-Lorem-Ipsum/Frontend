@@ -1,22 +1,15 @@
 <div class="notifications-container">
   <!-- User Profile -->
-  <div class="user-profile">
-    <img [src]="user.avatarUrl" alt="User Avatar" class="avatar">
-    <h2>{{ user.name }}</h2>
-    <p>{{ user.description }}</p>
-    <h4 class="mis-casos">
-      Mis Casos: <span class="suggestion">2</span>
-    </h4>
-  </div>
+  <app-current-user></app-current-user>
 
   <!-- Notifications Content -->
   <div class="notifications-content">
     <div class="notifications-list">
-      <div *ngFor="let caseItem of cases" class="notification-item">
-        <mat-icon class="case-logo">{{ caseItem.logo }}</mat-icon>
+      <div *ngFor="let notification of notifications" class="notification-item">
+        <mat-icon class="case-logo">notifications</mat-icon>
         <div class="case-details">
-          <h6>{{ caseItem.title }}</h6>
-          <p>{{ caseItem.message }}</p>
+          <h6>{{ notification.title }}</h6>
+          <p>{{ notification.description }}</p>
         </div>
       </div>
     </div>

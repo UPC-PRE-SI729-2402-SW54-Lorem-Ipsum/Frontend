@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {AddDocumentComponent} from "../../component/add-document/add-document.component";
-import {AddPaymentComponent} from "../../component/add-payment/add-payment.component";
+import {AddDocumentComponent} from "../../components/add-document/add-document.component";
+import {AddPaymentComponent} from "../../components/add-payment/add-payment.component";
 
 @Component({
   selector: 'app-payment-management',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {AddDocumentComponent} from "../../component/add-document/add-document.component";
+import {AddDocumentComponent} from "../../components/add-document/add-document.component";
 
 @Component({
   selector: 'app-document-management',

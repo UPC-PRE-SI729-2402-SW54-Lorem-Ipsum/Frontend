@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewLegalCaseComponent } from './view-legal-case.component';
+import { CasesComponent } from './cases.component';
 
-describe('ViewLegalCaseComponent', () => {
-  let component: ViewLegalCaseComponent;
-  let fixture: ComponentFixture<ViewLegalCaseComponent>;
+describe('CasesComponent', () => {
+  let component: CasesComponent;
+  let fixture: ComponentFixture<CasesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ViewLegalCaseComponent]
+      declarations: [CasesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewLegalCaseComponent);
+    fixture = TestBed.createComponent(CasesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
