@@ -43,15 +43,13 @@ import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/revi
 import {ViewLegalCaseComponent} from "./legalcase/pages/view-legal-case/view-legal-case.component";
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
 import {ConfirmRejectionComponent} from "./legalcase/component/confirm-rejection/confirm-rejection.component";
-import {AddAndEditDocumentComponent} from "./legalcase/component/add-and-edit-document/add-and-edit-document.component";
 import {DocumentTableComponent} from "./legalcase/component/document-table/document-table.component";
 import {MatDialogActions, MatDialogContent} from "@angular/material/dialog";
 import { ConfirmCloseCaseComponent } from './legalcase/component/confirm-close-case/confirm-close-case.component';
 import { AddPaymentComponent } from './legalcase/component/add-payment/add-payment.component';
 import { PaymentTableComponent } from './legalcase/component/payment-table/payment-table.component';
 import { PaymentManagementComponent } from './legalcase/pages/payment-management/payment-management.component';
-import { AddDocumentComponent } from './legalcase/components/add-document/add-document.component';
-
+import { AddDocumentComponent } from './legalcase/component/add-document/add-document.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +76,6 @@ import { AddDocumentComponent } from './legalcase/components/add-document/add-do
     ViewLegalCaseComponent,
     DocumentManagementComponent,
     ConfirmRejectionComponent,
-    AddAndEditDocumentComponent,
     DocumentTableComponent,
     ConfirmCloseCaseComponent,
     AddPaymentComponent,
