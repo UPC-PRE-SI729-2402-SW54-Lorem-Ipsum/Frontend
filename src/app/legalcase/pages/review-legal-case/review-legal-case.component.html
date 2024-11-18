@@ -13,7 +13,7 @@
                 </p>
             </div>
             <div class="actions">
-                <button class="reject" (click)="openRejectionPopup()">Denegar</button>
+                <button class="reject" (click)="openRejectionPopup('reject')">Denegar</button>
 
                 <button class="accept" (click)="acceptCase()">Aceptar</button>
             </div>
@@ -34,4 +34,3 @@
     </div>
 </div>
 
-<app-confirm-rejection *ngIf="showPopup" (response)="onRejectCase($event)"></app-confirm-rejection>

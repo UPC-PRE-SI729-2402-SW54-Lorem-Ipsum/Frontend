@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {LegalCase} from "../../model/legal-case.entity";
 import {LegalCaseService} from "../../services/legal-case.service";
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {ConfirmRejectionComponent} from "../../component/confirm-rejection/confirm-rejection.component";
 
 @Component({
   selector: 'app-review-legal-case',
@@ -12,7 +14,7 @@ export class ReviewLegalCaseComponent implements OnInit {
   legalCase: LegalCase = new LegalCase();
   showPopup = false;
 
-  constructor(private legalCaseService: LegalCaseService, private router: Router) {}
+  constructor(private legalCaseService: LegalCaseService, private router: Router, private dialog: MatDialog) {}
 
   ngOnInit() {
     const legalCaseId = 1;
@@ -21,8 +23,14 @@ export class ReviewLegalCaseComponent implements OnInit {
     });
   }
 
-  openRejectionPopup() {
-    this.showPopup = true;
+  openRejectionPopup(action: 'reject') {
+    const dialogRef = this.dialog.open(ConfirmRejectionComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'reject') {
+        this.showPopup = true;
+      }
+    });
   }
 
   onRejectCase(confirmed: boolean) {
