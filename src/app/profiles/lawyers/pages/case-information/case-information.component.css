@@ -1,0 +1,71 @@
+body{
+  background-color: #D9D9D9;
+}
+/* Estilo general */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  width: 487px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 50px auto;
+  background-color: #ffffff;
+}
+
+/* Título del formulario */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo de los cuadros de texto */
+.input-text,
+.input-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+/* Área de texto (más grande) */
+.input-textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Botones */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Botón de cancelar */
+.cancel-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #D9D9D9;
+  border-radius: 15px;
+}
+
+
+/* Botón de enviar */
+.submit-btn {
+  background-color: #2D6325;
+  color: #ffffff;
+  border: 1px solid #D9D9D9;
+  border-radius: 15px;
+}

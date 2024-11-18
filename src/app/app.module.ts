@@ -62,14 +62,30 @@ import {MatSelect} from "@angular/material/select";
 import { LawyerProfileComponent } from './profile/pages/lawyer-profile/lawyer-profile.component';
 
 
+import { ProfileLawyerComponent } from './profiles/lawyers/pages/profile-lawyer/profile-lawyer.component';
+import { CaseInformationComponent } from './profiles/lawyers/pages/case-information/case-information.component';
+import { ChooseQueryComponent } from './profiles/lawyers/pages/choose-query/choose-query.component';
+import { ChatroomComponent } from './profiles/lawyers/pages/chatroom/chatroom.component';
+import { VideoCallComponent } from './profiles/lawyers/pages/video-call/video-call.component';
+import { FaceToFaceAppointmentCalendarComponent } from './profiles/lawyers/pages/face-to-face-appointment-calendar/face-to-face-appointment-calendar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    HomeComponent,
+    LawyerReComponent,
     CurrentUserComponent,
     FooterComponent,
     ToolbarComponent,
     NotificationsComponent,
+    CasesComponent,
+    ProfileLawyerComponent,
+    CaseInformationComponent,
+    ChooseQueryComponent,
+    ChatroomComponent,
+    VideoCallComponent,
+    FaceToFaceAppointmentCalendarComponent
     SignInComponent,
     ForgotPasswordComponent,
     SignUpLawyerComponent,
