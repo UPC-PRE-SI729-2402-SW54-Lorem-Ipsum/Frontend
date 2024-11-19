@@ -1,12 +1,11 @@
-<body>
 <div class="main-wrapper">
   <div class="chat-container">
     <!-- Encabezado del chat -->
     <div class="chat-header">
       <img src="../../../../assets/images/jpc_3.jpg" alt="Foto de Perfil" class="profile-photo">
       <div class="chat-info">
-        <h4>Pedro Gallego Alcantara</h4>
-        <p>Abogado de violencia familiar</p>
+        <h4>{{ consultation?.lawyerId }}</h4>
+        <p>{{ consultation?.description }}</p>
       </div>
     </div>
 
@@ -14,10 +13,10 @@
     <div class="chat-messages">
       <div
         *ngFor="let message of messages"
-        [ngClass]="{'sent': message.type === 'sent', 'received': message.type === 'received'}"
+        [ngClass]="{'sent': isSentMessage(message.senderType), 'received': !isSentMessage(message.senderType)}"
         class="message"
       >
-        {{ message.text }}
+        {{ message.content }}
       </div>
     </div>
     <!-- Controles de envío -->
@@ -37,4 +36,3 @@
     </div>
   </div>
 </div>
-</body>

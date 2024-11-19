@@ -60,11 +60,18 @@ import { LastLegalCasesComponent } from './legalcase/components/last-legal-cases
 import { LawyerSearchComponent } from './profile/components/lawyer-search/lawyer-search.component';
 import {MatSelect} from "@angular/material/select";
 import { LawyerProfileComponent } from './profile/pages/lawyer-profile/lawyer-profile.component';
-import {ChatroomComponent} from "./comunication/chatroom/chatroom.component";
+import {ChatroomComponent} from "./communication/components/chatroom/chatroom.component";
 import {
   FaceToFaceAppointmentCalendarComponent
-} from "./comunication/face-to-face-appointment-calendar/face-to-face-appointment-calendar.component";
-import {VideoCallComponent} from "./comunication/video-call/video-call.component";
+} from "./communication/components/face-to-face-appointment-calendar/face-to-face-appointment-calendar.component";
+import {VideoCallComponent} from "./communication/components/video-call/video-call.component";
+import { HomeLawyerComponent } from './profile/pages/home-lawyer/home-lawyer.component';
+import { ViewConsultationsLawyerComponent } from './consultation/components/view-consultations-lawyer/view-consultations-lawyer.component';
+import { ConsultationsComponent } from './consultation/pages/consultations/consultations.component';
+import { CompleteSignUpLawyerComponent } from './profile/components/complete-sign-up-lawyer/complete-sign-up-lawyer.component';
+import { AddTypeLawyerComponent } from './profile/components/add-type-lawyer/add-type-lawyer.component';
+import { CreateAppointmentDialogComponent } from './communication/components/create-appointment-dialog/create-appointment-dialog.component';
+import {MatList, MatListItem} from "@angular/material/list";
 
 
 @NgModule({
@@ -107,7 +114,13 @@ import {VideoCallComponent} from "./comunication/video-call/video-call.component
     LawyerProfileComponent,
     ChatroomComponent,
     FaceToFaceAppointmentCalendarComponent,
-    VideoCallComponent
+    VideoCallComponent,
+    HomeLawyerComponent,
+    ViewConsultationsLawyerComponent,
+    ConsultationsComponent,
+    CompleteSignUpLawyerComponent,
+    AddTypeLawyerComponent,
+    CreateAppointmentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -130,6 +143,8 @@ import {VideoCallComponent} from "./comunication/video-call/video-call.component
     MatDialogActions,
     MatSelect,
     MatOption,
+    MatListItem,
+    MatList,
   ],
   providers: [
     provideAnimationsAsync(),

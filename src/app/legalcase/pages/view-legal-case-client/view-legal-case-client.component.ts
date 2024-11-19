@@ -4,6 +4,7 @@ import { LegalCaseService } from '../../services/legal-case.service';
 import { LegalCase } from '../../model/legal-case';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmCloseCaseComponent } from '../../components/confirm-close-case/confirm-close-case.component';
+import {Consultation} from "../../../consultation/model/consultation";
 
 @Component({
   selector: 'app-view-legal-case-client',
@@ -13,6 +14,7 @@ import { ConfirmCloseCaseComponent } from '../../components/confirm-close-case/c
 export class ViewLegalCaseClientComponent implements OnInit {
   legalCase: LegalCase | null = null;
   showPopup = false;
+  consultation: Consultation | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,10 +30,11 @@ export class ViewLegalCaseClientComponent implements OnInit {
     });
   }
 
+
   loadLegalCase(consultationId: number) {
     this.legalCaseService.getLegalCaseByConsultationId(consultationId).subscribe((data) => {
-      console.log(data);
       this.legalCase = data;
+      this.consultation = data.consultationId; // Assuming the legal case has a consultation property
     });
   }
 
@@ -44,7 +47,9 @@ export class ViewLegalCaseClientComponent implements OnInit {
   }
 
   goToChatRoom() {
-    this.router.navigate(['/chat-room']);
+    if (this.consultation) {
+      this.router.navigate(['/chat-room', this.consultation.id]);
+    }
   }
 
   goToVideoCall() {
@@ -52,7 +57,9 @@ export class ViewLegalCaseClientComponent implements OnInit {
   }
 
   goToAppointments() {
-    this.router.navigate(['/appointments']);
+    if (this.consultation) {
+      this.router.navigate(['/appointments', this.consultation.id]);
+    }
   }
 
   openCloseCasePopup(action: 'close') {

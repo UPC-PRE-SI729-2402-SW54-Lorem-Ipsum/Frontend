@@ -28,13 +28,32 @@ import {
 import {ViewLegalCaseClientComponent} from "./legalcase/pages/view-legal-case-client/view-legal-case-client.component";
 import {CasesComponent} from "./legalcase/pages/cases/cases.component";
 import {LawyerSearchComponent} from "./profile/components/lawyer-search/lawyer-search.component";
+import {HomeLawyerComponent} from "./profile/pages/home-lawyer/home-lawyer.component";
+import {ViewLegalCaseLawyerComponent} from "./legalcase/pages/view-legal-case-lawyer/view-legal-case-lawyer.component";
+import {
+  ViewConsultationsLawyerComponent
+} from "./consultation/components/view-consultations-lawyer/view-consultations-lawyer.component";
+import {ConsultationsComponent} from "./consultation/pages/consultations/consultations.component";
+import {ChatroomComponent} from "./communication/components/chatroom/chatroom.component";
+import {
+  FaceToFaceAppointmentCalendarComponent
+} from "./communication/components/face-to-face-appointment-calendar/face-to-face-appointment-calendar.component";
+import {VideoCallComponent} from "./communication/components/video-call/video-call.component";
 
 
 const routes: Routes = [
+  { path: 'appointments/:consultationId', component: FaceToFaceAppointmentCalendarComponent, canActivate: [authenticationGuard] },
+  { path: 'chat-room/:consultationId', component: ChatroomComponent, canActivate: [authenticationGuard] },
+  { path: 'chat-room', component: ChatroomComponent, canActivate: [authenticationGuard] },
+  { path:'appointments', component: FaceToFaceAppointmentCalendarComponent, canActivate: [authenticationGuard]},
+  { path:'video-call', component: VideoCallComponent, canActivate: [authenticationGuard]},
+  { path: 'consultations', component: ConsultationsComponent, canActivate: [authenticationGuard] },
+  { path: 'home-lawyer', component: HomeLawyerComponent, canActivate: [authenticationGuard] },
   { path: 'lawyer-search', component: LawyerSearchComponent, canActivate: [authenticationGuard] },
   { path: 'home-client', component: HomeClientComponent, canActivate: [authenticationGuard]},
   { path: 'cases', component: CasesComponent, canActivate: [authenticationGuard] },
   { path: 'view-legal-case-client/:consultationId', component: ViewLegalCaseClientComponent, canActivate: [authenticationGuard] },
+  { path: 'view-legal-case-lawyer/:consultationId', component: ViewLegalCaseLawyerComponent, canActivate: [authenticationGuard] },
   { path: 'view-consultations-made/:lawyerId', component: ViewConsultationsMadeComponent, canActivate: [authenticationGuard] },
   { path: 'make-consultation/:lawyerId', component: MakeConsultationComponent, canActivate: [authenticationGuard] },
   { path: 'lawyer-list', component: LawyerListComponent, canActivate: [authenticationGuard] },

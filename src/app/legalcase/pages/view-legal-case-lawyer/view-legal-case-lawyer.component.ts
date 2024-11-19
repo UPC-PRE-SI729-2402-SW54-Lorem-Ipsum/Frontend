@@ -1,54 +1,66 @@
-import {Component, OnInit} from '@angular/core';
-import {LegalCase} from "../../model/legal-case";
-import {LegalCaseService} from "../../services/legal-case.service";
-import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material/dialog";
-import {ConfirmCloseCaseComponent} from "../../components/confirm-close-case/confirm-close-case.component";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LegalCaseService } from '../../services/legal-case.service';
+import { LegalCase } from '../../model/legal-case';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmCloseCaseComponent } from '../../components/confirm-close-case/confirm-close-case.component';
+import {Consultation} from "../../../consultation/model/consultation";
 
 @Component({
   selector: 'app-view-legal-case-lawyer',
   templateUrl: './view-legal-case-lawyer.component.html',
-  styleUrl: './view-legal-case-lawyer.component.css'
+  styleUrls: ['./view-legal-case-lawyer.component.css']
 })
-export class ViewLegalCaseLawyerComponent  implements OnInit {
+export class ViewLegalCaseLawyerComponent implements OnInit {
   legalCase: LegalCase | null = null;
   showPopup = false;
+  consultation: Consultation | null = null;
 
-  constructor(private legalCaseService: LegalCaseService, private router: Router, private dialog: MatDialog) {}
+  constructor(
+    private route: ActivatedRoute,
+    private legalCaseService: LegalCaseService,
+    private router: Router,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit() {
-    const legalCaseId = 1;
-    this.legalCaseService.getLegalCaseById(legalCaseId).subscribe((data) => {
+    this.route.params.subscribe(params => {
+      const consultationId = +params['consultationId'];
+      this.loadLegalCase(consultationId);
+    });
+  }
+
+  loadLegalCase(consultationId: number) {
+    this.legalCaseService.getLegalCaseByConsultationId(consultationId).subscribe((data) => {
       this.legalCase = data;
+      this.consultation = data.consultationId; // Assuming the legal case has a consultation property
     });
   }
 
   goToDocuments() {
-    /* this.router.navigate(['/legal-cases', this.legalCase.id, 'documents']); */
     this.router.navigate(['/documents']);
   }
 
   goToPayments() {
     this.router.navigate(['/payments']);
   }
-
   goToChatRoom() {
-    this.router.navigate(['/chat-room']);
+    if (this.consultation) {
+      this.router.navigate(['/chat-room', this.consultation.id]);
+    }
   }
 
   goToVideoCall() {
     this.router.navigate(['/video-call']);
   }
 
-  goToAppointments(){
-    this.router.navigate(['/appointments']);
+  goToAppointments() {
+    if (this.consultation) {
+      this.router.navigate(['/appointments', this.consultation.id]);
+    }
   }
 
   openCloseCasePopup(action: 'close') {
-    /*this.legalCaseService.closeLegalCase(this.legalCase.id).subscribe(() => {
-      this.router.navigate(['/notifications']);
-    });*/
-
     const dialogRef = this.dialog.open(ConfirmCloseCaseComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -56,8 +68,7 @@ export class ViewLegalCaseLawyerComponent  implements OnInit {
         this.showPopup = true;
       }
     });
-
   }
-
 }
+
 

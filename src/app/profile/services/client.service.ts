@@ -19,4 +19,8 @@ export class ClientService {
   getAllClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.baseUrl);
   }
+
+  getClientIdByEmail(email: string): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/email/${email}`);
+  }
 }

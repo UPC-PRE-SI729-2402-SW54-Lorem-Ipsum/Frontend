@@ -19,11 +19,11 @@ export class LastLegalCasesComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.loadLegalCases();
+    // No llamar a loadLegalCases aquí
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['lawyerId']) {
+    if (changes['lawyerId'] && changes['lawyerId'].currentValue !== changes['lawyerId'].previousValue) {
       this.loadLegalCases();
     }
   }
@@ -35,7 +35,10 @@ export class LastLegalCasesComponent implements OnInit, OnChanges {
       const approvedConsultationIds = approvedConsultations.map(consultation => consultation.id).slice(0, 3);
       approvedConsultationIds.forEach(consultationId => {
         this.legalCaseService.getLegalCaseByConsultationId(consultationId).subscribe(legalCase => {
-          this.legalCases.push(legalCase);
+          if (!this.legalCases.some(existingCase => existingCase.id === legalCase.id)) {
+            this.legalCases.push(legalCase);
+          }
+          console.log('Legal case:', legalCase);
         });
       });
     });
