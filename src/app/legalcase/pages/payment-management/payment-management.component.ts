@@ -1,37 +1,19 @@
-import { Component } from '@angular/core';
-import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material/dialog";
-import {AddDocumentComponent} from "../../components/add-document/add-document.component";
-import {AddPaymentComponent} from "../../components/add-payment/add-payment.component";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-payment-management',
   templateUrl: './payment-management.component.html',
-  styleUrl: './payment-management.component.css'
+  styleUrls: ['./payment-management.component.css']
 })
-export class PaymentManagementComponent {
-  showPopup = false;
+export class PaymentManagementComponent implements OnInit {
+  consultationId: number = 0;
 
-  constructor(private router: Router, private dialog: MatDialog) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
-  goBackToLegalCase() {
-    this.router.navigate(['/view-legal-case']);
-  }
-
-  openAddDocumentDialog(action: 'add') {
-    /*this.legalCaseService.closeLegalCase(this.legalCase.id).subscribe(() => {
-      this.router.navigate(['/notifications']);
-    });*/
-
-    const dialogRef = this.dialog.open(AddPaymentComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result === 'add') {
-        this.showPopup = true;
-      }
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.consultationId = +params['consultationId'];
     });
-
   }
-
 }
