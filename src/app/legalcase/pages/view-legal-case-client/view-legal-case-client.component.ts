@@ -39,7 +39,10 @@ export class ViewLegalCaseClientComponent implements OnInit {
   }
 
   goToDocuments() {
-    this.router.navigate(['/documents']);
+    if (this.consultation) {
+      console.log('Consultation:', this.legalCase?.id);
+      this.router.navigate(['/documents', this.legalCase?.id]);
+    }
   }
 
   goToPayments() {

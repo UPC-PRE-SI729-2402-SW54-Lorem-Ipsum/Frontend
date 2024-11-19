@@ -15,7 +15,7 @@ import {SuccessfulSignUpComponent} from "./iam/pages/successful-sign-up/successf
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/review-legal-case.component";
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
-import {PaymentManagementComponent} from "./legalcase/pages/payment-management/payment-management.component";
+import {PaymentManagementComponent} from "./feeing/pages/payment-management/payment-management.component";
 import {HomeClientComponent} from "./profile/pages/home-client/home-client.component";
 import {
   LawyerProfileClientviewComponent
@@ -42,7 +42,7 @@ import {VideoCallComponent} from "./communication/components/video-call/video-ca
 
 
 const routes: Routes = [
-
+  { path: 'documents/:legalCaseId', component: DocumentManagementComponent, canActivate: [authenticationGuard] },
   { path: 'payments/:consultationId', component: PaymentManagementComponent, canActivate: [authenticationGuard] },
   { path: 'video-call/:consultationId', component: VideoCallComponent, canActivate: [authenticationGuard] },
   { path: 'appointments/:consultationId', component: FaceToFaceAppointmentCalendarComponent, canActivate: [authenticationGuard] },

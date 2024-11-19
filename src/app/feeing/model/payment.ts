@@ -9,7 +9,7 @@ export class Payment {
     id: number,
     clientId: number,
     amount: string,
-    status: string = 'PENDIENTE',
+    status: string,
     consultationId: number
   ) {
     this.id = id;

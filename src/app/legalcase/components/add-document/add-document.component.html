@@ -2,20 +2,24 @@
   <h5>Agregar Documento</h5>
 
   <div class="form-group">
-  <mat-form-field>
-    <input matInput placeholder="Título">
-  </mat-form-field>
-  </div>
-
-  <div class="form-group">
     <mat-form-field>
-      <input matInput placeholder="Descripción">
+      <input matInput placeholder="Título" [(ngModel)]="title">
     </mat-form-field>
   </div>
 
   <div class="form-group">
     <mat-form-field>
-      <input matInput placeholder="Tipo">
+      <input matInput placeholder="Descripción" [(ngModel)]="description">
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <mat-select placeholder="Tipo" [(ngModel)]="type">
+        <mat-option *ngFor="let type of documentTypes" [value]="type.value">
+          {{ type.label }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 
@@ -26,5 +30,3 @@
     </div>
   </mat-dialog-actions>
 </mat-dialog-content>
-
-

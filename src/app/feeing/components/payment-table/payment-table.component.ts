@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AddPaymentComponent } from '../add-payment/add-payment.component';
 import { AuthenticationService } from '../../../iam/services/authentication.service';
-import { Payment } from '../../../feeing/model/payment';
-import { PaymentService } from '../../../feeing/services/payment.service';
+import { Payment } from '../../model/payment';
+import { PaymentService } from '../../services/payment.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CompletePaymentResource } from '../../../feeing/model/complete-payment-resource';
+import { CompletePaymentResource } from '../../model/complete-payment-resource';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-payment-table',
@@ -19,13 +20,17 @@ export class PaymentTableComponent implements OnInit {
   constructor(
     private paymentService: PaymentService,
     private dialog: MatDialog,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.authService.currentUserRole.subscribe(role => {
       console.log(role);
       this.currentUserRole = role;
+    });
+    this.route.params.subscribe(params => {
+      this.consultationId = +params['consultationId'];
     });
     this.loadPayments();
   }
