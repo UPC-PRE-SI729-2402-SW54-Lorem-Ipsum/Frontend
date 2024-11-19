@@ -1,39 +1,25 @@
-import {Component, ViewChild} from '@angular/core';
-import {MatPaginator} from "@angular/material/paginator";
-import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material/dialog";
-import {AddDocumentComponent} from "../add-document/add-document.component";
+import { Component, Input, OnInit } from '@angular/core';
+import { DocumentsService } from '../../services/documents.service';
+import { SendDocument } from '../../model/send-document';
 
 @Component({
   selector: 'app-document-table',
   templateUrl: './document-table.component.html',
-  styleUrl: './document-table.component.css'
+  styleUrls: ['./document-table.component.css']
 })
-export class DocumentTableComponent {
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+export class DocumentTableComponent implements OnInit {
+  @Input() legalCaseId!: number;
+  documents: SendDocument[] = [];
 
-  showPopup = false;
+  constructor(private documentsService: DocumentsService) {}
 
-  constructor(private router: Router, private dialog: MatDialog) {
+  ngOnInit() {
+    this.loadDocuments();
   }
 
-  goBackToLegalCase() {
-    this.router.navigate(['/view-legal-case']);
-  }
-
-  openAddDocumentDialog(action: 'add') {
-    /*this.legalCaseService.closeLegalCase(this.legalCase.id).subscribe(() => {
-      this.router.navigate(['/notifications']);
-    });*/
-
-    const dialogRef = this.dialog.open(AddDocumentComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result === 'add') {
-        this.showPopup = true;
-      }
+  loadDocuments() {
+    this.documentsService.getAllDocumentItemsByLegalCaseId(this.legalCaseId).subscribe(docs => {
+      this.documents = docs;
     });
-
   }
-
 }

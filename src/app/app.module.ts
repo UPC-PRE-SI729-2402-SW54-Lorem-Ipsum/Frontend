@@ -41,9 +41,9 @@ import {ConfirmRejectionComponent} from "./legalcase/components/confirm-rejectio
 import {DocumentTableComponent} from "./legalcase/components/document-table/document-table.component";
 import {MatDialogActions, MatDialogContent} from "@angular/material/dialog";
 import { ConfirmCloseCaseComponent } from './legalcase/components/confirm-close-case/confirm-close-case.component';
-import { AddPaymentComponent } from './legalcase/components/add-payment/add-payment.component';
-import { PaymentTableComponent } from './legalcase/components/payment-table/payment-table.component';
-import { PaymentManagementComponent } from './legalcase/pages/payment-management/payment-management.component';
+import { AddPaymentComponent } from './feeing/components/add-payment/add-payment.component';
+import { PaymentTableComponent } from './feeing/components/payment-table/payment-table.component';
+import { PaymentManagementComponent } from './feeing/pages/payment-management/payment-management.component';
 import { AddDocumentComponent } from './legalcase/components/add-document/add-document.component';
 import { HomeClientComponent } from './profile/pages/home-client/home-client.component';
 import { LawyerListComponent } from './profile/components/lawyer-list/lawyer-list.component';

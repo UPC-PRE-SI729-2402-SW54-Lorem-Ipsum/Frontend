@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ConsultationService } from '../../../consultation/services/consultation.service';
-import { AddPaymentResource } from '../../../feeing/model/add-payment';
+import { AddPaymentResource } from '../../model/add-payment';
 
 @Component({
   selector: 'app-add-payment',
@@ -10,7 +10,7 @@ import { AddPaymentResource } from '../../../feeing/model/add-payment';
 })
 export class AddPaymentComponent {
   amount: number = 0;
-  currency: string = 'USD'; // Default currency
+  currency: string = 'PEN'; // Default currency
 
   constructor(
     private dialogRef: MatDialogRef<AddPaymentComponent>,
@@ -23,6 +23,7 @@ export class AddPaymentComponent {
     this.consultationService.addPaymentToConsultation(resource).subscribe(() => {
       this.dialogRef.close('confirm');
     });
+    this.dialogRef.close('confirm');
   }
 
   cancel() {

@@ -9,7 +9,7 @@ import {CompletePaymentResource} from "../model/complete-payment-resource";
   providedIn: 'root'
 })
 export class PaymentService {
-  private apiUrl = `${environment.serverBasePath}/v1/api/payments`;
+  private apiUrl = `http://localhost:8080/v1/api/payments`;
 
   constructor(private http: HttpClient) {}
 
