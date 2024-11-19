@@ -11,6 +11,7 @@ import { SignInRequest } from '../../model/sign-in.request';
 export class SignInComponent {
   username: string = '';
   password: string = '';
+  userRole: string = '';
 
   constructor(private router: Router, private authService: AuthenticationService) {
     this.authService.signOut();
@@ -19,6 +20,21 @@ export class SignInComponent {
   signIn() {
     const signInRequest = new SignInRequest(this.username, this.password);
     this.authService.signIn(signInRequest);
+  }
+
+  navigateSignIn() {
+    this.authService.currentUserRole.subscribe((role) => {
+      const match = role.match(/name=(\w+)/);
+      if (match) {
+        this.userRole = match[1];
+      }
+    });
+    console.log('User role:', this.userRole);
+    if (this.userRole === 'CLIENT') {
+      this.navigateTo('home-client');
+    } else if (this.userRole === 'LAWYER') {
+      this.navigateTo('home-lawyer');
+    }
   }
 
   navigateTo(route: string) {

@@ -47,6 +47,7 @@ export class ListLegalCasesComponent implements OnInit {
   }
 
   viewLegalCase(consultationId: number): void {
+    console.log('View legal case:', this.userRole);
     if (this.userRole === 'LAWYER') {
       this.router.navigate(['/view-legal-case-lawyer', consultationId]);
     } else if (this.userRole === 'CLIENT') {

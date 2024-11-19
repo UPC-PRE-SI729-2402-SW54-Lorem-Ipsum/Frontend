@@ -45,4 +45,8 @@ export class ConsultationService {
   declineConsultation(consultationId: number): Observable<void> {
     return this.http.patch<void>(`${this.apiUrl}/reject/${consultationId}`, {});
   }
+
+  getConsultationById(consultationId: number): Observable<Consultation> {
+    return this.http.get<Consultation>(`${this.apiUrl}/${consultationId}`);
+  }
 }

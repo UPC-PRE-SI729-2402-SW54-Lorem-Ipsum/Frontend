@@ -9,21 +9,32 @@
 
   <span class="toolbar-spacer"></span>
 
-  <button mat-button class="btn" [routerLink]="['/home-client']">
+  <button *ngIf="userRole === 'LAWYER'" mat-button class="btn" [routerLink]="['/home-lawyer']">
     <mat-icon>home</mat-icon>
     Inicio
   </button>
 
-  <button mat-button class="btn" [routerLink]="['/notifications']">
+  <button *ngIf="userRole === 'CLIENT'" mat-button class="btn" [routerLink]="['/home-client']">
+    <mat-icon>home</mat-icon>
+    Inicio
+  </button>
+
+  <button *ngIf="userRole === 'CLIENT'" mat-button class="btn" [routerLink]="['/notifications']">
     <mat-icon>notifications</mat-icon>
     Notificaciones
+  </button>
+
+  <button *ngIf="userRole === 'LAWYER'" mat-button class="btn" (click)="openAddSpecialtyDialog()">
+    <mat-icon>notifications</mat-icon>
+    Agregar especialidad
   </button>
 
   <button mat-button class="btn" [routerLink]="['/cases']">
     <mat-icon>work</mat-icon>
     Casos
   </button>
-  <button *ngIf="userRole === 'LAWYER'" mat-button class="btn" [routerLink]="['/']">
+
+  <button *ngIf="userRole === 'LAWYER'" mat-button class="btn" [routerLink]="['/consultations']">
     <mat-icon>gavel</mat-icon>
     Ver solicitudes
   </button>
