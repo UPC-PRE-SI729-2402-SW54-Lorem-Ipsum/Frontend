@@ -1,7 +1,24 @@
-<!-- TODO: Add the html code for the document table -->
-
-<div class="actions">
-  <button class="model" (click)="openAddPaymentDialog('add')"> Subir Documento </button>
-  <span class="spacer"></span>
-  <button class="model" (click)="goBackToLegalCase()"> Volver a Caso </button>
+<div class="payment-table">
+  <h2>Pagos</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Monto</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let payment of payments">
+      <td>{{ payment.id }}</td>
+      <td>{{ payment.amount }}</td>
+      <td>{{ payment.status }}</td>
+      <td>
+        <button *ngIf="currentUserRole === '[Role(id=1, name=CLIENT)]'" (click)="completePayment(payment.id)">Pagar</button>
+      </td>
+    </tr>>
+    <button *ngIf="currentUserRole === '[Role(id=1, name=LAWYER)]'" (click)="createPayment()">Crear Pago</button>
+    </tbody>
+  </table>
 </div>

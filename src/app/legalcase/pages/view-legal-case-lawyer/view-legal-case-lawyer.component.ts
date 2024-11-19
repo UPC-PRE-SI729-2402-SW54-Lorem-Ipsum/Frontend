@@ -42,8 +42,11 @@ export class ViewLegalCaseLawyerComponent implements OnInit {
   }
 
   goToPayments() {
-    this.router.navigate(['/payments']);
+    if (this.consultation) {
+      this.router.navigate(['/payments', this.consultation.id]);
+    }
   }
+
   goToChatRoom() {
     if (this.consultation) {
       this.router.navigate(['/chat-room', this.consultation.id]);
