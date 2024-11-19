@@ -39,7 +39,7 @@ import {ReviewLegalCaseComponent} from "./legalcase/pages/review-legal-case/revi
 import {DocumentManagementComponent} from "./legalcase/pages/document-management/document-management.component";
 import {ConfirmRejectionComponent} from "./legalcase/components/confirm-rejection/confirm-rejection.component";
 import {DocumentTableComponent} from "./legalcase/components/document-table/document-table.component";
-import {MatDialogActions, MatDialogContent} from "@angular/material/dialog";
+import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import { ConfirmCloseCaseComponent } from './legalcase/components/confirm-close-case/confirm-close-case.component';
 import { AddPaymentComponent } from './legalcase/components/add-payment/add-payment.component';
 import { PaymentTableComponent } from './legalcase/components/payment-table/payment-table.component';
@@ -124,30 +124,31 @@ import { CreateVideoCallDialogComponent } from './communication/components/creat
     CreateAppointmentDialogComponent,
     CreateVideoCallDialogComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatTableModule,
-    MatSortModule,
-    MatIconModule,
-    MatPaginatorModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatGridListModule,
-    NgOptimizedImage,
-    MatDialogContent,
-    MatDialogActions,
-    MatSelect,
-    MatOption,
-    MatListItem,
-    MatList,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatTableModule,
+        MatSortModule,
+        MatIconModule,
+        MatPaginatorModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatGridListModule,
+        NgOptimizedImage,
+        MatDialogContent,
+        MatDialogActions,
+        MatSelect,
+        MatOption,
+        MatListItem,
+        MatList,
+        MatDialogTitle,
+    ],
   providers: [
     provideAnimationsAsync(),
     provideNativeDateAdapter(),
