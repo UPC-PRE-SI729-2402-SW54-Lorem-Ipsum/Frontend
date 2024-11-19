@@ -53,7 +53,9 @@ export class ViewLegalCaseClientComponent implements OnInit {
   }
 
   goToVideoCall() {
-    this.router.navigate(['/video-call']);
+    if (this.consultation) {
+      this.router.navigate(['/video-call', this.consultation.id]);
+    }
   }
 
   goToAppointments() {

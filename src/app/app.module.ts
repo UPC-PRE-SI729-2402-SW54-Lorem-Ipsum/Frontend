@@ -72,6 +72,7 @@ import { CompleteSignUpLawyerComponent } from './profile/components/complete-sig
 import { AddTypeLawyerComponent } from './profile/components/add-type-lawyer/add-type-lawyer.component';
 import { CreateAppointmentDialogComponent } from './communication/components/create-appointment-dialog/create-appointment-dialog.component';
 import {MatList, MatListItem} from "@angular/material/list";
+import { CreateVideoCallDialogComponent } from './communication/components/create-video-call-dialog/create-video-call-dialog.component';
 
 
 @NgModule({
@@ -120,7 +121,8 @@ import {MatList, MatListItem} from "@angular/material/list";
     ConsultationsComponent,
     CompleteSignUpLawyerComponent,
     AddTypeLawyerComponent,
-    CreateAppointmentDialogComponent
+    CreateAppointmentDialogComponent,
+    CreateVideoCallDialogComponent
   ],
   imports: [
     BrowserModule,

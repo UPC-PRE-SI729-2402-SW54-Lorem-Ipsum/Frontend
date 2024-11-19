@@ -42,6 +42,8 @@ import {VideoCallComponent} from "./communication/components/video-call/video-ca
 
 
 const routes: Routes = [
+
+  { path: 'video-call/:consultationId', component: VideoCallComponent, canActivate: [authenticationGuard] },
   { path: 'appointments/:consultationId', component: FaceToFaceAppointmentCalendarComponent, canActivate: [authenticationGuard] },
   { path: 'chat-room/:consultationId', component: ChatroomComponent, canActivate: [authenticationGuard] },
   { path: 'chat-room', component: ChatroomComponent, canActivate: [authenticationGuard] },
